@@ -10,7 +10,7 @@
 <body>
     <nav id="top-bar">
         <div id="left-top">
-            <h1 class ="logo">Placeholder</h1>
+            <h1 class ="logo">Lars Olsson</h1>
         </div>
         <div id="right-top">
             <a href="home" class="a-topbar">HOME</a>
@@ -19,12 +19,24 @@
             <a href="contact" class="a-topbar">CONTACT</a>
         </div>
     </nav>
-    <section>
+    <section id="mid-section">
+        <aside id="mid-aside">
+            <div id="portrait">
+                <img src="Images/portrait-pixelated.png" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+            </div>
 
-        <div id="hero">
+        </aside>
+
+        <div id="education">
+            <p id="education1">.NET DEVELOPER</p>
+            <p id="education2">CLOUD FOCUS</p>
         </div>
-        <aside>
-            
+        <aside id="mid-aside">
+            <div id="social-media">
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="linkdn">
+                    <img src="images/linkdn.png" class="social-media-img" alt="bildlänk till linkdn">
+                </a>
+            </div>
         </aside>
     </section>
    
@@ -41,15 +53,18 @@
             <button class="footer-buttons" id="CV-button">CV</button>
         </div>
         <div id="footer-center">
-            <img src="/Images/ZooSAL.png" class="footer-img" alt="bild på spelet shotgun">
-            <img src="/Images/Shotgun.png" class="footer-img" alt="bild på spelet shotgun">
+            <img src="/Images/zooSAL.png" class="footer-img" alt="bild på spelet shotgun">
+            <img src="/Images/shotgun.png" class="footer-img" alt="bild på spelet shotgun">
         </div>
         <div id="footer-left">
-            <button class=footer-buttons id="musicToggle">🎵</button>
-            <audio id="bgMusic" loop>
-                <source src="Sounds/NR3.mp3" type="audio/mpeg">
-            </audio>
+            <button class=footer-buttons id="music-toggle">🎵</button>
+            <div id="music-menu" class="hidden-menu">
+                <button class="song" data-src="Sounds/NR1.mp3">NR1</button>
+                <button class="song" data-src="Sounds/NR2.mp3">NR2</button>
+                <button class="song" data-src="Sounds/NR3.mp3">NR3</button>
+            </div>
         </div>
+        <audio id="music"></audio>
     </footer>
 <script src="background.js"></script>
 </body>
