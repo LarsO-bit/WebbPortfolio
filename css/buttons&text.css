@@ -99,14 +99,19 @@ caption{
   pointer-events: none;
 }
 
-#portrait{
+#hero-wrapper{
   display: flex;
-  align-items: center; 
+  justify-content: center;
+}
+
+#hero{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 #img-self-portrait{
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 220px;
   border-radius: 20px;
   box-shadow: 0 0 40px var(--pink);
   border: double 2px var(--pink);
