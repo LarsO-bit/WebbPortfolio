@@ -26,6 +26,7 @@
   rgb(122, 122, 122) 100%
 );
 
+
 }
 
 @font-face {
@@ -35,8 +36,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family:"SyntFontType2";
+  src: url("/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
+  font-weight:bolder ;
+  font-style: normal;
+}
+
 *{
-  font-family: "SyntFont", sans-serif; 
+  font-family: "SyntFontTypr2", sans-serif; 
+}
+
+caption{
+  color: var(--aqua);
 }
 
 #top-bar{
@@ -132,25 +144,33 @@
   align-items: center;
 }
 
-#social-media {
+.social-media-left,
+.social-media-right {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateX(45px);
 }
 
-#social-media::before,
-#social-media::after {
+.social-media-left{
+  transform: translateX(-45px);
+}
+
+.social-media-right{
+  transform: translateX(45px);
+}
+.social-media-right::before,
+.social-media-right::after,
+.social-media-left::before,
+.social-media-left::after {
   content: "";
   width: 2px;
   height: 275px;
   background: linear-gradient(to bottom, transparent, var(--aqua));
 }
-
-#social-media::after {
+.social-media-left::after,
+.social-media-right::after {
   background: linear-gradient(to top, transparent, var(--aqua));
 }
-
 
 .social-media-img {
   width: 100px;
@@ -192,21 +212,47 @@ footer{
 
 #footer-center{
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: center;
+  gap: 50px;
 }
 
-.footer-img{
-  height: 200px;
-  margin: 0 50px 100px 50px;
-  border-radius: 10px;
+.port-card{
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 12%;
   box-shadow: 0 0 40px var(--aqua);
+  border-radius: 10px;
   border: solid 2px var(--aqua);
   opacity: 70%;
   transition: 0.3s;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.footer-img:hover{
+.footer-img{
+  width: 100%;
+  object-fit: cover;
+  border-bottom: solid 2px var(--aqua);
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--pink);
+  text-shadow: 0 0 15px var(--pink);
+  margin-bottom: 10px;
+}
+
+
+.port-card:hover{
   opacity: 100%;
   transform: scale(1.2);
   box-shadow: 0 0 60px var(--aqua);
@@ -227,11 +273,11 @@ footer{
   border-radius: 10px;
   box-shadow: 0 0 40px var(--aqua);
   border: solid 2px var(--aqua);
-  transition: 0.3s;
 }
 
 .hidden-menu {
   visibility: hidden;
+  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
 }
 
 .song {
@@ -239,10 +285,9 @@ footer{
   border-radius: 10px;
   box-shadow: 0 0 40px var(--aqua);
   border: solid 2px var(--aqua);
-  transition: 0.3s;
   padding: 10px;
   margin-bottom: 10px;
-
+  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
   color: white;
   font-size: 20px;
 }

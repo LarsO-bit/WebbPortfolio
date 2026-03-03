@@ -13,8 +13,12 @@ const menu = document.getElementById("music-menu");
 const audio = document.getElementById("music");
 const songs = document.querySelectorAll(".song");
 
-toggleBtn.addEventListener("click", () => {
-  menu.classList.toggle("hidden-menu");
+toggleBtn.addEventListener("click", function() {
+  if (menu.classList.contains("hidden-menu")) {
+    menu.classList.remove("hidden-menu");
+  } else {
+    menu.classList.add("hidden-menu");
+  }
 });
 
 songs.forEach(song => {

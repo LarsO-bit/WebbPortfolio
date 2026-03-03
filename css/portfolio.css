@@ -1,0 +1,47 @@
+:root {
+  --sun-pink: rgb(255, 47, 146);
+  --sky-top: rgb(43, 0, 87);
+  --sky-mid: rgb(18, 0, 43);
+  --sky-bottom: rgb(7, 0, 18);
+  --grid: rgb(115, 235, 223);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at center 40%,
+      rgba(255, 47, 146, 0.15) 0%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    linear-gradient(
+      to top,
+      var(--sky-bottom),
+      var(--sky-mid),
+      var(--sky-top)
+    );
+  overflow-x: hidden;
+}
+
+.grid-portfolio {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      var(--grid) 0px,
+      var(--grid) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--grid) 0px,
+      var(--grid) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+}
