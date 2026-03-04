@@ -1,0 +1,16 @@
+body{
+    caret-color: aqua;
+}
+
+.circle{
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    mix-blend-mode: screen;
+}
+
