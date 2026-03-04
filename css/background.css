@@ -1,13 +1,13 @@
 :root {
-  --sun-orange: #ff9a00;
-  --sun-pink: #ff2f92;
+  --sun-orange: rgb(255, 154, 0);
+  --sun-pink: rgb(255, 47, 146);
 
-  --sky-top: #2b0057;
-  --sky-mid: #12002b;
-  --sky-bottom: #070012;
+  --sky-top: rgb(43, 0, 87);
+  --sky-mid: rgb(18, 0, 43);
+  --sky-bottom: rgb(7, 0, 18);
 
-  --grid: #ff2f92;
-  --horizon-glow: #ff2f92;
+  --grid: rgb(95, 24, 58);
+  --horizon-glow: rgb(247, 35, 138);
 
   --ground-offset: 0px;
 }
@@ -37,10 +37,9 @@ background:
     );
 }
 
-
 .scene {
 z-index: 0;
-position: relative;
+position: absolute;
 width: 100%;
 height: 100%;
 display: flex;
@@ -133,15 +132,15 @@ content: "";
 
 position: absolute;
 top: -80px;
-width: 160%;
-height: 200px;
+width: 180%;
+height: 100px;
 
 background: radial-gradient(
     ellipse at center,
     var(--horizon-glow) 0%,
     rgba(255, 77, 196, 0.4) 30%,
-    rgba(0, 0, 0, 0) 70%
-    );
+    rgba(0, 0, 0, 0)70%
+    );                                                                                                                                                       
 
 border-radius: 50%;
 filter: blur(25px);

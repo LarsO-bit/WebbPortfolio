@@ -1,26 +1,31 @@
 let offset = 0;
 
 function animateGround() {
-    offset += 0.6;
+    offset += 0.4;
     document.documentElement.style.setProperty("--ground-offset", `${offset}px`);
     requestAnimationFrame(animateGround);
 }
 
 animateGround();
 
-const music = document.getElementById("bgMusic");
-const button = document.getElementById("musicToggle");
+const toggleBtn = document.getElementById("music-toggle");
+const menu = document.getElementById("music-menu");
+const audio = document.getElementById("music");
+const songs = document.querySelectorAll(".song");
 
-let isPlaying = false;
+toggleBtn.addEventListener("click", function() {
+  if (menu.classList.contains("hidden-menu")) {
+    menu.classList.remove("hidden-menu");
+  } else {
+    menu.classList.add("hidden-menu");
+  }
+});
 
-button.addEventListener("click", () => {
-    if (!isPlaying) {
-        music.play();
-        button.textContent = "⏸";
-        isPlaying = true;
-    } else {
-        music.pause();
-        button.textContent = "🎵";
-        isPlaying = false;
-    }
+songs.forEach(song => {
+  song.addEventListener("click", () => {
+    const src = song.getAttribute("data-src");
+    audio.src = src;
+    audio.play();
+    menu.classList.add("hidden-menu");
+  });
 });

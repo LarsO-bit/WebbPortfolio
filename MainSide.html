@@ -5,12 +5,12 @@
     <title>Synthwave Bakgrund</title>
     <link rel="stylesheet" href="/css/background.css" />
     <link rel="stylesheet" href="/css/buttons&text.css">
-
+    
 </head>
 <body>
     <nav id="top-bar">
         <div id="left-top">
-            <h1 class ="logo">Placeholder</h1>
+            <h1 class ="logo">Lars Olsson</h1>
         </div>
         <div id="right-top">
             <a href="home" class="a-topbar">HOME</a>
@@ -19,12 +19,35 @@
             <a href="contact" class="a-topbar">CONTACT</a>
         </div>
     </nav>
-    <section>
-
-        <div id="hero">
-        </div>
-        <aside>
-            
+    <section id="mid-section">
+        <aside id="left-aside">
+            <div class="social-media">
+                <div class="social-media-left">
+                    <a href="https://github.com/" target="_blank" aria-label="GitHub">
+                        <img src="images/github.png" class="social-media-img" alt="bildlänk till GitHub">
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <section id="hero-wrapper">
+            <div id="hero">
+                <div id="portrait">
+                    <img src="Images/portrait-pixelated.png" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+                </div>
+                <div id="education">
+                    <p id="education1">.NET DEVELOPER</p>
+                    <p id="education2">CLOUD FOCUS</p>
+                </div>
+            </div>
+        </section>
+        <aside id="right-aside">
+            <div class="social-media">
+                <div class="social-media-right">
+                    <a href="https://www.linkedin.com/" target="_blank" aria-label="linkdn">
+                        <img src="images/linkdn.png" class="social-media-img" alt="bildlänk till linkdn">
+                    </a>
+                </div>
+            </div>
         </aside>
     </section>
    
@@ -37,18 +60,18 @@
         <div class="ground"></div>
     </div>
     <footer>
-        <div id="left-footer">
-
+        <div id="footer-right">
+            <button class="footer-buttons" id="CV-button">Download CV</button>
         </div>
-        <div id="center-footer">
-            <img src="/Images/Shotgun.png" class="footer-img" alt="bild på spelet shotgun">
+        <div id="footer-left">
+            <button class=footer-buttons id="music-toggle">🎵</button>
+            <div id="music-menu" class="hidden-menu">
+                <button class="song" data-src="Sounds/NR1.mp3">NR1</button>
+                <button class="song" data-src="Sounds/NR2.mp3">NR2</button>
+                <button class="song" data-src="Sounds/NR3.mp3">NR3</button>
+            </div>
         </div>
-        <div id="left-footer">
-            <button id="musicToggle">🎵</button>
-            <audio id="bgMusic" loop>
-                <source src="Sounds/NR3.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+        <audio id="music"></audio>
     </footer>
 <script src="background.js"></script>
 </body>
