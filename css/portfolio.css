@@ -45,3 +45,51 @@ body {
       transparent 80px
     );
 }
+
+#footer-center{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.port-card{
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 12%;
+  box-shadow: 0 0 40px var(--aqua);
+  border-radius: 10px;
+  border: solid 2px var(--aqua);
+  opacity: 70%;
+  transition: 0.3s;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.footer-img{
+  width: 100%;
+  object-fit: cover;
+  border-bottom: solid 2px var(--aqua);
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--pink);
+  text-shadow: 0 0 15px var(--pink);
+  margin-bottom: 10px;
+}
+
+
+.port-card:hover{
+  opacity: 100%;
+  transform: scale(1.2);
+  box-shadow: 0 0 60px var(--aqua);
+}
