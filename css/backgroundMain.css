@@ -1,0 +1,148 @@
+:root {
+  --sun-orange: rgb(255, 154, 0);
+  --sun-pink: rgb(255, 47, 146);
+
+  --sky-top: rgb(43, 0, 87);
+  --sky-mid: rgb(18, 0, 43);
+  --sky-bottom: rgb(7, 0, 18);
+
+  --grid: rgb(95, 24, 58);
+  --horizon-glow: rgb(247, 35, 138);
+
+  --ground-offset: 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+height: 100vh;
+overflow: hidden;
+
+background:
+    radial-gradient(
+    circle at center 30%,
+    rgba(255, 80, 180, 0.6) 0%,
+    rgba(120, 0, 90, 0.4) 40%,
+    rgba(0, 0, 0, 0) 75%
+    ),
+    linear-gradient(
+    to top,
+    var(--sky-bottom) 0%,
+    var(--sky-mid) 50%,
+    var(--sky-top) 100%
+    );
+}
+
+.scene {
+z-index: 0;
+position: absolute;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+overflow: hidden;
+}
+
+.sun {
+position: relative;
+top: 50%;
+width: 20%;
+height: 75%;
+border-radius: 50%;
+background: linear-gradient(var(--sun-orange), var(--sun-pink));
+box-shadow:
+    0 0 40px var(--sun-pink),
+    0 0 120px var(--sun-pink);
+
+overflow: hidden;
+
+mask-image: repeating-linear-gradient(
+to bottom,
+    black 0px,
+    black 8px,
+    transparent 8px,
+    transparent 16px
+);
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.ground {
+display: flex;
+justify-content: center;
+position: relative;
+width: 100%;
+height: 50%;
+transform-origin: top center;
+transform: perspective(700px) rotateX(70deg) translateY(60px);
+opacity: 0.8;
+
+background:
+    linear-gradient(
+    to top,
+    rgba(255, 47, 146, 0.7) 0%,
+    rgba(255, 47, 146, 0.3) 20%,
+    rgba(0, 0, 0, 0) 80%
+    ),
+
+    
+    repeating-linear-gradient(
+    to bottom,
+    var(--grid) 0px,
+    var(--grid) 2px,
+    transparent 2px,
+    transparent 60px
+    ),
+
+    
+    repeating-linear-gradient(
+    to right,
+    var(--grid) 0px,
+    var(--grid) 2px,
+    transparent 2px,
+    transparent 60px
+    );
+
+background-position:
+    0 0,
+    0 var(--ground-offset), 
+    0 0;
+
+background-size:
+    100% 100%,
+    100% 60px,
+    60px 100%;
+}
+
+.ground::before {
+content: "";
+
+position: absolute;
+top: -80px;
+width: 180%;
+height: 100px;
+
+background: radial-gradient(
+    ellipse at center,
+    var(--horizon-glow) 0%,
+    rgba(255, 77, 196, 0.4) 30%,
+    rgba(0, 0, 0, 0)70%
+    );                                                                                                                                                       
+
+border-radius: 50%;
+filter: blur(25px);
+pointer-events: none;
+}

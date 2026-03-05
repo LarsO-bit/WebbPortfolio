@@ -51,42 +51,6 @@ caption{
   color: var(--aqua);
 }
 
-#top-bar{
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 100px 0 100px;
-    z-index: 1;
-}
-.logo {
-  color:var(--pink);
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  font-size: 60px;
-
-  text-shadow:0 0 20px var(--pink);
-}
-
-.a-topbar {
-  display: inline-block;
-  color: aqua;
-  font-size: 20px;
-  letter-spacing: 2px;
-  transition: 0.3s;
-  margin-left: 60px;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.a-topbar:hover {
-  color: var(--pink);
-  text-shadow: 0 0 8px var(--pink);
-  transform: scale(1.4);
-}
-
 #mid-section{
   position: fixed;
   width: 100%;
