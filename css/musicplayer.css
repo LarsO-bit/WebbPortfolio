@@ -1,0 +1,70 @@
+#music-player{
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:15px;
+
+    padding:20px;
+
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+
+#song-name{
+    font-size: 2rem;
+    color: var(--sun-pink);
+
+    text-shadow:
+        0 0 6px var(--sun-pink),
+        0 0 20px var(--sun-pink);
+}
+
+#current-time,
+#total-time{
+    font-size: 0.9rem;
+    color: var(--aqua-light);
+}
+
+#song-slider{
+
+    width: 100%;
+    cursor: pointer;
+
+    accent-color: var(--aqua);
+}
+
+#music-buttons{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    gap: 20px;
+
+    margin-top: 10px;
+
+    color: var(--aqua);
+}
+
+#music-buttons i{
+
+    cursor: pointer;
+    transition: 0.25s;
+
+    text-shadow: 0 0 10px var(--aqua);
+}
+
+#music-buttons i:hover{
+
+    transform: scale(1.2);
+
+    color: var(--sun-pink);
+
+    text-shadow:
+        0 0 10px var(--sun-pink),
+        0 0 25px var(--sun-pink);
+}

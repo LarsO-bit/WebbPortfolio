@@ -1,95 +1,158 @@
 :root {
   --sun-pink: rgb(255, 47, 146);
-  --sky-top: rgb(43, 0, 87);
-  --sky-mid: rgb(18, 0, 43);
-  --sky-bottom: rgb(7, 0, 18);
-  --grid: rgb(115, 235, 223);
+  --sun-orange: rgb(207, 89, 59);
+  --sky-bottom: rgb(76, 23, 129);
+  --sky-mid: rgb(50, 16, 97);
+  --sky-top: rgb(7, 0, 18);
+  --aqua-light: rgb(115, 235, 223);
+  --aqua: rgb(0, 255, 200);
+  --glass:rgba(255,255,255,0.05);
+  --chrome-trans: linear-gradient(
+  to bottom,
+  rgb(245, 245, 245, 0.7) 0%,
+  rgb(207, 207, 207, 0.7) 20%,
+  rgb(255, 255, 255, 0.7) 40%,
+  rgb(153, 153, 153, 0.7) 60%,
+  rgb(234, 234, 234, 0.7) 80%,
+  rgb(122, 122, 122, 0.7) 100%
+);
+ --chrome: linear-gradient(
+  to bottom,
+  rgb(245, 245, 245) 0%,
+  rgb(207, 207, 207) 20%,
+  rgb(255, 255, 255) 40%,
+  rgb(153, 153, 153) 60%,
+  rgb(234, 234, 234) 80%,
+  rgb(122, 122, 122) 100%
+);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body {
-  min-height: 100vh;
   background:
-    radial-gradient(
-      circle at center 40%,
-      rgba(255, 47, 146, 0.15) 0%,
-      rgba(0, 0, 0, 0) 60%
-    ),
-    linear-gradient(
-      to top,
-      var(--sky-bottom),
-      var(--sky-mid),
-      var(--sky-top)
-    );
-  overflow-x: hidden;
+  radial-gradient(
+    circle at 50% 20%,
+    rgba(255, 80, 180, 0.35),
+    transparent 60%
+  ),
+  linear-gradient(
+    to top,
+    var(--sky-bottom),
+    var(--sky-mid),
+    var(--sky-top)
+  );
 }
 
-.grid-portfolio {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    repeating-linear-gradient(
-      to right,
-      var(--grid) 0px,
-      var(--grid) 1px,
-      transparent 1px,
-      transparent 80px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--grid) 0px,
-      var(--grid) 1px,
-      transparent 1px,
-      transparent 80px
-    );
+#Port{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-#footer-center{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  gap: 50px;
+.port {
+    flex: 1;
+    padding: 40px clamp(20px, 6vw, 100px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 40px);
+
 }
 
-.port-card{
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  width: 12%;
-  box-shadow: 0 0 40px var(--aqua);
-  border-radius: 10px;
-  border: solid 2px var(--aqua);
-  opacity: 70%;
-  transition: 0.3s;
+.port-card {
+  height: 1
+  var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--aqua);
+  border-radius: 20px;
+  box-shadow: 0 0 20px var(--aqua-light);
   overflow: hidden;
-  margin-bottom: 10px;
+  transition: 0.4s ease;
+  transform: translateZ(0);
 }
 
-.footer-img{
-  width: 100%;
-  object-fit: cover;
-  border-bottom: solid 2px var(--aqua);
+.port-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 50px var(--aqua);
+}
+
+.port-img {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 0 20px var(--sun-pink);
 }
 
 .card-content {
-  padding: 15px;
-  text-align: center;
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(0,0,0,0.35)
+    );
+
+    border-top: 1px solid var(--aqua);
 }
 
 .card-title {
-  font-size: 26px;
-  letter-spacing: 3px;
-  color: var(--pink);
-  text-shadow: 0 0 15px var(--pink);
-  margin-bottom: 10px;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+
+    color: var(--sun-pink);
+
+    text-shadow:
+    0 0 6px var(--sun-pink),
+    0 0 20px var(--sun-pink),
+    0 0 40px var(--sun-pink);
 }
 
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--aqua-light);
+    font-size: 0.95rem;
+}
 
-.port-card:hover{
-  opacity: 100%;
-  transform: scale(1.2);
-  box-shadow: 0 0 60px var(--aqua);
+.card-row a {
+    color: var(--aqua);
+    text-decoration: none;
+
+    text-shadow:
+    0 0 6px var(--aqua),
+    0 0 15px var(--aqua);
+
+    transition: 0.2s;
+}
+
+.card-row a:hover {
+    color: white;
+    text-shadow:
+    0 0 8px white,
+    0 0 20px var(--aqua);
+}
+.description {
+    color: var(--aqua-light);
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.port-card:hover {
+    transform: scale(1.05) translateY(-6px);
+
+    box-shadow:
+    0 0 20px var(--aqua),
+    0 0 40px var(--sun-pink),
+    0 0 80px rgba(255,47,146,0.5);
 }
