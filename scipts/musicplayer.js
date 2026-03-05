@@ -24,14 +24,15 @@ const songs = [
 
 const audio = document.createElement("audio")
 let currentSongInd = 0;
-update();
+
+updateSong();
 
 prev.addEventListener("click", function(){
     if (currentSongInd == 0){
         return;
     }
     currentSongInd--;
-    update();
+    updateSong();
 });
 
 next.addEventListener("click", function(){
@@ -39,15 +40,64 @@ next.addEventListener("click", function(){
         return;
     }
     currentSongInd++;
-    update();
+    updateSong();
 });
 
 playAndPause.addEventListener("click", function(){
-    audio.play();
+    if (audio.paused) {
+        audio.play();
+
+        playAndPause.classList.remove("fa-circle-play");
+        playAndPause.classList.add("fa-circle-pause");
+    }
+    else{
+        audio.pause();
+
+        playAndPause.classList.remove("fa-circle-pause");
+        playAndPause.classList.add("fa-circle-play");
+    }
 })
 
-function update() {
+audio.addEventListener("ended", function(){
+
+    if (currentSongInd < songs.length - 1){
+        currentSongInd++;
+        updateSong();
+        audio.play();
+    }
+
+});
+
+function updateSong() {
     const song = songs[currentSongInd];
     songName.innerText = song.name
     audio.src = song.audio
+
+    audio.onloadedmetadata = function () {
+        songSlider.max = audio.duration;
+        document.getElementById("total-time").innerText = formatTime(audio.duration);
+    };
+};
+
+function formatTime(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min}:${sec < 10 ? "0" : ""}${sec}`;
 }
+
+function updateSlider() {
+    songSlider.value = audio.currentTime
+};
+
+setInterval(updateSlider, 1000);
+
+audio.addEventListener("timeupdate", function () {
+    songSlider.value = audio.currentTime;
+    document.getElementById("current-time").innerText = formatTime(audio.currentTime);
+});
+
+songSlider.addEventListener("change", function () {
+    audio.currentTime = songSlider.value;
+});
+
+

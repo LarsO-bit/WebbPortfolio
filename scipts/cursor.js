@@ -15,8 +15,8 @@ for (let i = 0; i < circleCount; i++) {
 }
 
 window.addEventListener("mousemove", function(e){
-    coord.x = e.clientX;
-    coord.y = e.clientY;
+    coord.x = e.clientX + window.scrollX;
+    coord.y = e.clientY + window.scrollY;
 });
 
 function animateTrail() {
