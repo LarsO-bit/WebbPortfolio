@@ -1,72 +1,32 @@
-:root {
-  --sun-pink: rgb(255, 47, 146);
-  --sun-orange: rgb(207, 89, 59);
-  --sky-bottom: rgb(76, 23, 129);
-  --sky-mid: rgb(50, 16, 97);
-  --sky-top: rgb(7, 0, 18);
-  --aqua-light: rgb(115, 235, 223);
-  --aqua: rgb(0, 255, 200);
-  --glass:rgba(255,255,255,0.05);
-  --chrome-trans: linear-gradient(
-  to bottom,
-  rgb(245, 245, 245, 0.7) 0%,
-  rgb(207, 207, 207, 0.7) 20%,
-  rgb(255, 255, 255, 0.7) 40%,
-  rgb(153, 153, 153, 0.7) 60%,
-  rgb(234, 234, 234, 0.7) 80%,
-  rgb(122, 122, 122, 0.7) 100%
-);
- --chrome: linear-gradient(
-  to bottom,
-  rgb(245, 245, 245) 0%,
-  rgb(207, 207, 207) 20%,
-  rgb(255, 255, 255) 40%,
-  rgb(153, 153, 153) 60%,
-  rgb(234, 234, 234) 80%,
-  rgb(122, 122, 122) 100%
-);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body {
-  background:
-  radial-gradient(
-    circle at 50% 20%,
-    rgba(255, 80, 180, 0.35),
-    transparent 60%
-  ),
-  linear-gradient(
-    to top,
-    var(--sky-bottom),
-    var(--sky-mid),
-    var(--sky-top)
-  );
-}
-
-#Port{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+#port{
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .port {
-    flex: 1;
-    padding: 40px clamp(20px, 6vw, 100px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
-    gap: clamp(20px, 2vw, 40px);
+  flex: 1;
+  padding: 40px clamp(20px, 6vw, 100px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: clamp(20px, 2vw, 40px);
+  height: 100%;
+}
 
+#port h1{
+    text-align: center;
+    color: var(--sun-pink);
+    margin-bottom: 20px;
+
+    text-shadow:
+    0 0 10px var(--sun-pink),
+    0 0 30px var(--sun-pink);
 }
 
 .port-card {
-  height: 1
-  var(--glass);
+  background: var(--glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--aqua);
   border-radius: 20px;
@@ -77,30 +37,30 @@ body {
 }
 
 .port-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 50px var(--aqua);
+  transform: scale(1.08);
+  box-shadow: 0 0 50px var(--aqua);
 }
 
 .port-img {
-    width: 100%;
-    aspect-ratio: 9/16;
-    object-fit: cover;
-    display: block;
-    box-shadow: 0 0 20px var(--sun-pink);
+  width: 100%;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 20px var(--sun-pink);
 }
 
 .card-content {
-    padding: 22px;
+  padding: 22px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.03),
-        rgba(0,0,0,0.35)
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.35)
     );
 
     border-top: 1px solid var(--aqua);
