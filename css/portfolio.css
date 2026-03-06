@@ -1,18 +1,31 @@
-#port{
-  height: calc(100vh - 100px);
-  margin-top: 100px;
+body{
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.port {
+@media (max-width: 900px){
+  body{
+    overflow: auto;
+  }
+}
+
+#port{
   flex: 1;
-  padding: 40px clamp(20px, 6vw, 100px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0;
+}
+
+.port {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-auto-rows: 1fr;
-  gap: clamp(20px, 2vw, 40px);
-  height: 100%;
+  gap: 5%;
+  max-width: 1400px;
+  width: 90%;
 }
 
 #port h1{
@@ -26,14 +39,17 @@
 }
 
 .port-card {
-  background: var(--glass);
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.35)
+    );
   backdrop-filter: blur(12px);
   border: 1px solid var(--aqua);
   border-radius: 20px;
   box-shadow: 0 0 20px var(--aqua-light);
   overflow: hidden;
   transition: 0.4s ease;
-  transform: translateZ(0);
 }
 
 .port-card:hover {
@@ -43,27 +59,17 @@
 
 .port-img {
   width: 100%;
-  aspect-ratio: 9/16;
+  aspect-ratio: 9/12;
   object-fit: cover;
   display: block;
-  box-shadow: 0 0 20px var(--sun-pink);
+  border-bottom: 1px solid var(--aqua);
 }
 
 .card-content {
   padding: 22px;
-
   display: flex;
   flex-direction: column;
   gap: 14px;
-
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.03),
-    rgba(0,0,0,0.35)
-    );
-
-    border-top: 1px solid var(--aqua);
 }
 
 .card-title {

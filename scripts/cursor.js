@@ -1,6 +1,6 @@
 
 const coord = { x: 0, y: 0 };
-const circleCount = 400;
+const circleCount = 300;
 const circles = [];
 const circleDelay = 0.05;
 
@@ -40,8 +40,8 @@ function animateTrail() {
         circle.style.background = "#00f7ff";
         circle.style.boxShadow = `
         0 0 4px #00f7ff,
-        0 0 6px #00f7ff,
-        0 0 10px #00f7ff
+        0 0 20px #00f7ff,
+        0 0 40px #00f7ff
         `;
         
     });
