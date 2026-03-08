@@ -33,18 +33,26 @@
     box-sizing:border-box;
 }
 
-body {
-  height: 100vh;
+body{
+  z-index: 0;
+  height:100vh;
   background:
-  radial-gradient(
-    circle at 50% 20%,
-    rgba(255, 80, 180, 0.35),
-    transparent 60%
-  ),
-  linear-gradient(
-    to top,
-    var(--sky-bottom) 30%,
-    var(--sky-mid) 60%,
-    var(--sky-top)
-  );
+    radial-gradient(circle at 20% 30%, rgba(235, 9, 137, 0.298), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(117, 255, 225, 0.25), transparent 60%),
+    linear-gradient(
+      to top,
+      var(--sky-bottom),
+      var(--sky-mid),
+      var(--sky-top)
+    );
+
+  background-size: 200% 200%;
+  animation:
+    backgroundMovement 20s ease-in-out infinite;
+}
+
+@keyframes backgroundMovement{
+  0%{background-position:0% 0%, 100% 100%, 0% 0%;}
+  50%{background-position:100% 50%, 0% 50%, 0% 0%;}
+  100%{background-position:0% 0%, 100% 100%, 0% 0%;}
 }
