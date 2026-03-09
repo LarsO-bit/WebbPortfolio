@@ -9,28 +9,90 @@
     <link rel="stylesheet" href="/css/about.css">
 </head>
 <body>
+    <div id="shooting-stars"></div>
     <div id="navbar-container"></div>
     <script src="/scripts/navbar.js"></script>
+    <main class="about-layout">   
+        <section id="about-me">
+            <aside id="profile">
+                <div class="avatar"></div>
+            </aside>
+            <div class="intro panel">
+                 <h2>About Me</h2>
+                <p>
+                    I am a civil engineer with a background in construction and infrastructure,
+                    currently transitioning into software and cloud development.
+                </p>
+                <p>
+                    My professional experience comes from working as a project engineer,
+                    where I coordinated technical projects and implemented digital workflows.
+                    This sparked my interest in software and systems development.
+                </p>
+                <p>
+                    I am currently studying .NET development with a focus on cloud technologies.
+                </p>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a civil engineer with a background in construction and infrastructure,
-            currently transitioning into software and cloud development.
-        </p>
-        <p>
-            My professional experience comes from working as a project engineer,
-            where I coordinated technical projects and implemented digital workflows.
-            This sparked my interest in software and systems development.
-        </p>
-        <p>
-            I am currently studying .NET development with a focus on cloud technologies.
-        </p>
-    </section>
-    <section id="skills">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </section>
+                <!--
+                <div class="intro panel">
+                    <h2>ABOUT ME</h2>
+
+                    <p><strong>Civil Engineer → Developer</strong></p>
+
+                    <p>Background: Construction & Infrastructure</p>
+
+                    <p>Focus:</p>
+
+                    <ul>
+                        <li>.NET Development</li>
+                        <li>Cloud Technologies</li>
+                    </ul>
+                </div>-->
+            </div>
+        </section>
+        <section class="skill panel">
+            <h2>Skills</h2>
+            <div id="skill-grid">
+                <div class="skill-card">
+                    <h3>BACKEND</h3>
+                    <ul>
+                        <li>.NET</li>
+                        <li>C#</li>
+                        <li>SQL</li>
+                        <li>APIs</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>CLOUD</h3>
+                    <ul>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>ENGINEERING</h3>
+                    <ul>
+                        <li>Project Management</li>
+                        <li>Technical Coordination</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="hobbies panel">
+            <h2>Hobbies</h2>
+            <div class="hobby-grid">
+                <div class="hobby">Synthwave</div>
+                <div class="hobby">Tennis</div>
+                <div class="hobby">Cycling</div>
+                <div class="hobby">Skiing</div>
+                <div class="hobby">Climbing</div>
+                <div class="hobby">Sci-Fi & Fantasy</div>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/shotingStar.js"></script>
 </body>
 </html>
