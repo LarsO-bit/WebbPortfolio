@@ -1,5 +1,5 @@
 .about-layout{
-    max-width: 1100px;
+    max-width: 90%;
     margin: 0 auto;
     padding-top: 140px; 
     padding-left: 40px;
@@ -37,9 +37,7 @@
 .avatar{
     width: 180px;
     height: 180px;
-
     border-radius: 50%;
-
     background: linear-gradient(
         135deg,
         var(--pink),
@@ -55,6 +53,23 @@
 h2{
     color: var(--pink);
     margin-bottom: 20px;
+    text-align: center;
+}
+
+h2::after,
+h2::before{
+    content: "";
+    width: 30%;
+    height: 2px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+h2::after{
+    background: linear-gradient(to left, transparent, var(--aqua));
+}
+h2::before{
+    background: linear-gradient(to right, transparent, var(--aqua));
 }
 
 .intro p{
@@ -73,9 +88,9 @@ h2{
     padding: 20px;
     border: 1px solid var(--aqua-trans);
     border-radius: 8px;
-
     box-shadow: 0 0 10px var(--aqua-trans);
 }
+
 
 .skill-card h3{
     color: var(--aqua);
@@ -121,3 +136,4 @@ h2{
     0 0 10px var(--pink),
     0 0 20px var(--pink);
 }
+

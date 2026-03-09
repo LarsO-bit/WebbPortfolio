@@ -220,7 +220,7 @@ pointer-events: none;
 #right-aside::after {
   content: "";
   width: 2px;
-  height: 2dvh;
+  height: 16vh;
 }
 
 #right-aside::before {

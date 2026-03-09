@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contact-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    position: relative;
+    width: 450px;
+    padding: 40px;
+    background: rgba(10,0,30,0.55);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.35),
+        0 0 40px rgba(255,47,146,0.35),
+        inset 0 0 30px rgba(0,0,0,0.4);
+}
+
+.contact::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        var(--aqua),
+        var(--sun-pink)
+    );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.contacts-inputs{
+    width: 100%;
+    padding: 12px;
+
+    background: rgba(0,0,0,0.4);
+
+    border: 2px solid var(--aqua-light);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contacts-inputs:focus{
+    border-color: #00ffff;
+
+    box-shadow:
+        0 0 10px var(--aqua),
+        0 0 20px var(--sun-pink);
+}
+
+textarea{
+    resize: none;
+    height: 120px;
+}
+
+button{
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #00ffff,
+        #ff2f92
+    );
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 30px rgba(255,47,146,0.6);
+
+    transition: 0.3s;
+}
+
+button:hover{
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px var(--aqua),
+        0 0 50px var(--sun-pink);
+}
+
+.contact-left-title h2{
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.contact-left-title hr{
+    border: none;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        #00ffff,
+        #ff2f92
+    );
+
+    margin-top: 10px;
+}
+
+@media(max-width:600px){
+
+.contact{
+    width:90%;
+    padding:30px;
+}
+
+}
+
