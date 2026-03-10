@@ -14,7 +14,7 @@
 .contact{
     position: relative;
     width: 450px;
-    padding: 40px;
+    padding: 20px;
     background: rgba(10,0,30,0.55);
     border-radius: 18px;
     backdrop-filter: blur(15px);
@@ -43,7 +43,6 @@
     -webkit-mask:
         linear-gradient(#000 0 0) content-box,
         linear-gradient(#000 0 0);
-
     mask-composite: exclude;
     pointer-events: none;
 }
@@ -51,9 +50,7 @@
 .contacts-inputs{
     width: 100%;
     padding: 12px;
-
     background: rgba(0,0,0,0.4);
-
     border: 2px solid var(--aqua-light);
     border-radius: 8px;
     color: white;
@@ -77,10 +74,8 @@ textarea{
 
 button{
     padding: 14px;
-
     border: none;
     border-radius: 8px;
-
     background: linear-gradient(
         90deg,
         #00ffff,
@@ -90,20 +85,16 @@ button{
     color: white;
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
 
     box-shadow:
         0 0 15px #00ffff,
         0 0 30px rgba(255,47,146,0.6);
-
     transition: 0.3s;
 }
 
 button:hover{
-
     transform: translateY(-2px);
-
     box-shadow:
         0 0 25px var(--aqua),
         0 0 50px var(--sun-pink);
@@ -133,6 +124,5 @@ button:hover{
     width:90%;
     padding:30px;
 }
-
 }
 

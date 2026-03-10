@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/background.css">
     <link rel="stylesheet" href="/css/topbar.css">
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div id="shooting-stars"></div>
@@ -14,8 +15,10 @@
     <script src="/scripts/navbar.js"></script>
     <main class="about-layout">   
         <section id="about-me">
-            <aside id="profile">
-                <div class="avatar"></div>
+            <aside id="left">
+                <div id="portrait">
+                    <img src="/Images/portrait-pixelated.png" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+                </div>
             </aside>
             <div class="intro panel">
                  <h2>About Me</h2>
@@ -24,30 +27,41 @@
                     currently transitioning into software and cloud development.
                 </p>
                 <p>
-                    My professional experience comes from working as a project engineer,
-                    where I coordinated technical projects and implemented digital workflows.
-                    This sparked my interest in software and systems development.
+                    My professional experience comes from working as a project engineer, where I coordinated complex projects, 
+                    developed digital workflows and implemented a 3D-based design process. 
+                    This experience sparked my interest in software, systems development and building structured, efficient solutions.
                 </p>
                 <p>
-                    I am currently studying .NET development with a focus on cloud technologies.
+                    I am currently studying .NET development with a focus on cloud technologies, 
+                    exploring how to design scalable and maintainable applications. I enjoy working at the intersection of technology, 
+                    problem-solving and collaboration, and  I am particularly interested in building systems that have real-world impact.
                 </p>
 
-                <!--
-                <div class="intro panel">
-                    <h2>ABOUT ME</h2>
+                <p>
+                    Outside of tech, I am passionate about creating synthwave music, you can even listen to some of my tracks in the music player to the right. 
+                    I enjoy an active lifestyle filled with climbing, long-distance cycling, sailing, playing tennis as a former tennis coach, and always seeking out
+                    new adventures.
+                </p>
 
-                    <p><strong>Civil Engineer → Developer</strong></p>
 
-                    <p>Background: Construction & Infrastructure</p>
-
-                    <p>Focus:</p>
-
-                    <ul>
-                        <li>.NET Development</li>
-                        <li>Cloud Technologies</li>
-                    </ul>
-                </div>-->
+                
             </div>
+            <aside id="left">
+                <div id="container-music">
+                <div id="music-player">
+                    <img src="/Images/placeholder.png" id="song-image"/>
+                    <div id="song-name"></div>
+                    <span id="current-time"></span>
+                    <input type="range" id="song-slider">
+                    <span id="total-time"></span>
+                    <div id="music-buttons">
+                        <i id="backward" class="fa-solid fa-backward-step"></i>
+                        <i id="playpause" class="fa-solid fa-circle-play fa-2x"></i>
+                        <i id="forward" class="fa-solid fa-forward-step"></i>
+                    </div>
+                </div>
+                </div>
+            </aside>
         </section>
         <section class="skill panel">
             <h2>Skills</h2>
@@ -93,6 +107,6 @@
             </div>
         </section>
     </main>
-    <script src="/scripts/shotingStar.js"></script>
+    <script src="/scripts/musicplayer.js"></script>
 </body>
 </html>
