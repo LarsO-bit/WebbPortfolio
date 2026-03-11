@@ -17,7 +17,7 @@
         <section id="about-me">
             <aside id="left">
                 <div id="portrait">
-                    <img src="/Images/portrait-pixelated.png" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+                    <img src="/Images/portrait-pixelated.jpg" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
                 </div>
             </aside>
             <div class="intro panel container">
@@ -49,15 +49,15 @@
             <aside id="left">
                 <div id="container-music">
                     <div id="music-player">
-                        <img src="/Images/placeholder.png" id="song-image"/>
+                        <img src="/Images/placeholder.jpg" id="song-image" alt="Picture of album cover, a lone skier on a snowy mountain"/>
                         <div id="song-name"></div>
                         <span id="current-time"></span>
-                        <input type="range" id="song-slider">
+                        <input type="range" id="song-slider" aria-label="Slider that shows where in the song you are">
                         <span id="total-time"></span>
                         <div id="music-buttons">
-                            <i id="backward" class="fa-solid fa-backward-step"></i>
-                            <i id="playpause" class="fa-solid fa-circle-play fa-2x"></i>
-                            <i id="forward" class="fa-solid fa-forward-step"></i>
+                            <i id="backward" class="fa-solid fa-backward-step" alt="Button that plays previous song"></i>
+                            <i id="playpause" class="fa-solid fa-circle-play fa-2x" alt="Button that plays and pauses song"></i>
+                            <i id="forward" class="fa-solid fa-forward-step" alt="Button that plays next song"></i>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                 <h2>References</h2>
                 <div class="reference-slider">
                     <button class="ref-arrow left">
-                        <i class="fa-solid fa-chevron-left"></i>
+                        <i class="fa-solid fa-chevron-left" aria-label="Button that jumps to previous qoute"></i>
                     </button>
                     <div class="reference-cards">
                         <div class="reference-card active">
@@ -129,7 +129,7 @@
                             </p>
                         </div>
                     </div>
-                    <button class="ref-arrow right">
+                    <button class="ref-arrow right" aria-label="Button that jumps to next qoute">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
