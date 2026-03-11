@@ -1,7 +1,36 @@
+h2{
+    color: var(--pink);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2::after,
+h2::before{
+    content: "";
+    width: 20%;
+    height: 2px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+h2::after{
+    background: linear-gradient(to left, transparent, var(--aqua));
+}
+h2::before{
+    background: linear-gradient(to right, transparent, var(--aqua));
+}
+
+.intro p{
+    color: var(--aqua);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
 .about-layout{
     max-width: 90%;
     margin: 0 auto;
-    padding-top: 140px; 
+    padding-top: 100px; 
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -21,11 +50,12 @@
 }
 
 #about-me{
+    min-height: 420px;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     gap: 40px;
     align-items: stretch;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #profile,
@@ -37,13 +67,20 @@
 #portrait,
 #container-music{
     width:100%;
-    height:100%;
+    height:auto;
     backdrop-filter: blur(12px);
     border: 1px solid var(--aqua);
     border-radius: 20px;
     box-shadow: 0 0 20px var(--aqua-light);
     border-radius: 10px;
     overflow: hidden;
+    transition: 0.4s ease;
+}
+
+#portrait:hover,
+#container-music:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 50px var(--aqua);
 }
 
 #img-self-portrait{
@@ -73,11 +110,6 @@
     transition: 0.4s ease;
 }
 
-#container-music:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 50px var(--aqua);
-}
-
 #music-player{
     width: 100%;
     height: 100%;
@@ -91,7 +123,7 @@
 
 #song-image{
     width: 100%;
-    aspect-ratio: 9/12;
+    aspect-ratio: 9/10;
     object-fit: cover;
     border: 1px solid var(--sun-pink);
     border-radius: 10px;
@@ -123,7 +155,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 24px;
     gap: 20px;
     margin: 0;
     color: var(--aqua);
@@ -143,33 +175,14 @@
         0 0 25px var(--sun-pink);
 }
 
-h2{
-    color: var(--pink);
-    margin-bottom: 20px;
-    text-align: center;
+.skill-ref{
+    position: relative;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:40px;
+    margin-bottom:20px;
 }
 
-h2::after,
-h2::before{
-    content: "";
-    width: 30%;
-    height: 2px;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-h2::after{
-    background: linear-gradient(to left, transparent, var(--aqua));
-}
-h2::before{
-    background: linear-gradient(to right, transparent, var(--aqua));
-}
-
-.intro p{
-    color: var(--aqua);
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
 
 #skill-grid{
     display: grid;
@@ -178,7 +191,7 @@ h2::before{
 }
 
 .skill-card{
-    padding: 20px;
+    padding: 10px;
     border: 1px solid var(--aqua-trans);
     border-radius: 8px;
     box-shadow: 0 0 10px var(--aqua-trans);
@@ -201,7 +214,46 @@ h2::before{
 }
 
 
-.hobby-grid{
+.reference-slider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.ref-arrow{
+    background:none;
+    border:none;
+    color:var(--aqua);
+    font-size:22px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.ref-arrow:hover{
+    color:var(--sun-pink);
+    transform:scale(1.2);
+}
+
+.reference-cards{
+    width:100%;
+    min-height:160px;
+}
+
+.reference-card{
+    color: aqua;
+    display:none;
+    padding:20px;
+    border:1px solid var(--aqua-trans);
+    border-radius:8px;
+    box-shadow:0 0 10px var(--aqua-trans);
+}
+
+.reference-card.active{
+    display:block;
+}
+
+/* .hobby-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
     gap: 15px;
@@ -228,5 +280,13 @@ h2::before{
     box-shadow:
     0 0 10px var(--pink),
     0 0 20px var(--pink);
+} */
+
+.container{
+    transition: 0.4s ease;
 }
 
+.container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 50px var(--aqua);
+}
