@@ -12,22 +12,26 @@
 <body>
     <div id="navbar-container"></div>
     <div class="background"></div>
-    <div class="contact-container">
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact">
+    <main class="contact-container">
+        <form method="POST" id="form" class="contact">
             <div class="contact-left-title">
                 <h2>Get in touch</h2>
                 <hr>
             </div>
             <input type="hidden" name="access_key" value="591feca6-6e33-47cf-bdab-e766f9f9cf0a">
+            <input type="hidden" name="subject" value="New Submission from Web3Forms">
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
+            <!-- Custom Form Data -->
             <input type="text" name="name" placeholder="Your Name" class="contacts-inputs" required>
             <input type="email" name="email" placeholder="Your Email" class="contacts-inputs" required>
             <textarea name="message" placeholder="Your Message" class="contacts-inputs" required></textarea>
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <button type="submit">Send Message</button>
+            <div id="result"></div>
         </form>
-    </div>
-
+    </main>
     <script src="/scripts/cursor.js"></script>
     <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/validation.js"></script>
 </body>
 </html>

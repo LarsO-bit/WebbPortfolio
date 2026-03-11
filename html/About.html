@@ -17,10 +17,10 @@
         <section id="about-me">
             <aside id="left">
                 <div id="portrait">
-                    <img src="/Images/portrait-pixelated.png" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+                    <img src="/Images/portrait-pixelated.jpg" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
                 </div>
             </aside>
-            <div class="intro panel">
+            <div class="intro panel container">
                  <h2>About Me</h2>
                 <p>
                     I am a civil engineer with a background in construction and infrastructure,
@@ -48,54 +48,94 @@
             </div>
             <aside id="left">
                 <div id="container-music">
-                <div id="music-player">
-                    <img src="/Images/placeholder.png" id="song-image"/>
-                    <div id="song-name"></div>
-                    <span id="current-time"></span>
-                    <input type="range" id="song-slider">
-                    <span id="total-time"></span>
-                    <div id="music-buttons">
-                        <i id="backward" class="fa-solid fa-backward-step"></i>
-                        <i id="playpause" class="fa-solid fa-circle-play fa-2x"></i>
-                        <i id="forward" class="fa-solid fa-forward-step"></i>
+                    <div id="music-player">
+                        <img src="/Images/placeholder.jpg" id="song-image" alt="Picture of album cover, a lone skier on a snowy mountain"/>
+                        <div id="song-name"></div>
+                        <span id="current-time"></span>
+                        <input type="range" id="song-slider" aria-label="Slider that shows where in the song you are">
+                        <span id="total-time"></span>
+                        <div id="music-buttons">
+                            <i id="backward" class="fa-solid fa-backward-step" alt="Button that plays previous song"></i>
+                            <i id="playpause" class="fa-solid fa-circle-play fa-2x" alt="Button that plays and pauses song"></i>
+                            <i id="forward" class="fa-solid fa-forward-step" alt="Button that plays next song"></i>
+                        </div>
                     </div>
-                </div>
                 </div>
             </aside>
         </section>
-        <section class="skill panel">
-            <h2>Skills</h2>
-            <div id="skill-grid">
-                <div class="skill-card">
-                    <h3>BACKEND</h3>
-                    <ul>
-                        <li>.NET</li>
-                        <li>C#</li>
-                        <li>SQL</li>
-                        <li>APIs</li>
-                    </ul>
-                </div>
+        <section class="skill-ref">
+            <div class="skill panel container">
+                <h2>Skills</h2>
+                <div id="skill-grid">
+                    <div class="skill-card">
+                        <h3>BACKEND</h3>
+                        <ul>
+                            <li>.NET</li>
+                            <li>C#</li>
+                            <li>SQL</li>
+                            <li>APIs</li>
+                        </ul>
+                    </div>
 
-                <div class="skill-card">
-                    <h3>CLOUD</h3>
-                    <ul>
-                        <li>Azure</li>
-                        <li>Docker</li>
-                        <li>CI/CD</li>
-                    </ul>
-                </div>
+                    <div class="skill-card">
+                        <h3>CLOUD</h3>
+                        <ul>
+                            <li>Azure</li>
+                            <li>Docker</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
 
-                <div class="skill-card">
-                    <h3>ENGINEERING</h3>
-                    <ul>
-                        <li>Project Management</li>
-                        <li>Technical Coordination</li>
-                        <li>Problem Solving</li>
-                    </ul>
+                    <div class="skill-card">
+                        <h3>ENGINEERING</h3>
+                        <ul>
+                            <li>Project Management</li>
+                            <li>Technical Coordination</li>
+                            <li>Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="references panel container">
+                <h2>References</h2>
+                <div class="reference-slider">
+                    <button class="ref-arrow left">
+                        <i class="fa-solid fa-chevron-left" aria-label="Button that jumps to previous qoute"></i>
+                    </button>
+                    <div class="reference-cards">
+                        <div class="reference-card active">
+                            <h3>Sina Sabzi</h3>
+                            <p>Country Manager – </p>
+                            <p>
+                                Lars showed excellent technical coordination
+                                and problem-solving skills during several projects.
+                            </p>
+                        </div>
+                        <div class="reference-card">
+                            <h3>Erik Johansson</h3>
+                            <p>Lead Technical team – Kingspan AB</p>
+                            <p>
+                                Lars quickly adapted to digital workflows
+                                and demonstrated strong analytical thinking.
+                            </p>
+                        </div>
+                        <div class="reference-card">
+                            <h3>Maria Lind</h3>
+                            <p>Team Lead – Cloud Systems</p>
+                            <p>
+                                Highly motivated developer with strong curiosity
+                                for cloud technologies.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="ref-arrow right" aria-label="Button that jumps to next qoute">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
-        <section class="hobbies panel">
+        <!--<section class="hobbies panel">
             <h2>Hobbies</h2>
             <div class="hobby-grid">
                 <div class="hobby">Synthwave</div>
@@ -105,8 +145,9 @@
                 <div class="hobby">Climbing</div>
                 <div class="hobby">Sci-Fi & Fantasy</div>
             </div>
-        </section>
+        </section>-->
     </main>
+    <script src="/scripts/referenceslider.js"></script>
     <script src="/scripts/musicplayer.js"></script>
 </body>
 </html>
