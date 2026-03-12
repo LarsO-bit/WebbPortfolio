@@ -1,3 +1,7 @@
+h1{
+    color: var(--sun-pink);
+}
+
 h2{
     color: var(--pink);
     margin-bottom: 20px;
@@ -252,35 +256,6 @@ h2::before{
     display:block;
 }
 
-/* .hobby-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
-    gap: 15px;
-}
-
-.hobby{
-    padding: 12px;
-    text-align: center;
-
-    border: 1px solid var(--pink-dark);
-    border-radius: 6px;
-
-    color: var(--aqua);
-
-    box-shadow: 0 0 6px var(--pink-dark);
-
-    transition: 0.3s;
-}
-
-.hobby:hover{
-    color: var(--pink);
-    border-color: var(--pink);
-
-    box-shadow:
-    0 0 10px var(--pink),
-    0 0 20px var(--pink);
-} */
-
 .container{
     transition: 0.4s ease;
 }
@@ -288,4 +263,28 @@ h2::before{
 .container:hover {
     transform: scale(1.01);
     box-shadow: 0 0 50px var(--aqua);
+}
+
+@media (max-width: 900px){
+body{
+  overflow: auto;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 8vw;
+  padding: 100px 0;
+  display: flex;
+  text-align: center;
+  color: var(--sun-pink);
+  margin-bottom: 20px;
+
+  text-shadow:
+    0 0 10px var(--sun-pink),
+    0 0 30px var(--sun-pink);
+}
 }

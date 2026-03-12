@@ -37,36 +37,61 @@ background:
     );
 }
 
+@font-face {
+  font-family:"SyntFont";
+  src: url("/Fonts/BungeeShade-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"SyntFontType2";
+  src: url("/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
+  font-weight:bolder ;
+  font-style: normal;
+}
+
+*{
+  font-family: "SyntFontType2", sans-serif; 
+}
+
+caption{
+  color: var(--aqua);
+}
+
+
 .scene {
-z-index: 0;
-position: absolute;
-width: 100%;
-height: 100%;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-overflow: hidden;
+  position: fixed;       
+  top: 0;               
+  left: 0;                  
+  width: 100%;
+  height: 100vh;            
+  z-index: -1;              
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .sun {
-position: relative;
-top: 50%;
-width: 20%;
-height: 75%;
-border-radius: 50%;
-background: linear-gradient(var(--sun-orange), var(--sun-pink));
-box-shadow:
-    0 0 40px var(--sun-pink),
-    0 0 120px var(--sun-pink);
-
-overflow: hidden;
-
-mask-image: repeating-linear-gradient(
-to bottom,
-    black 0px,
-    black 8px,
-    transparent 8px,
-    transparent 16px
+  position: relative;
+  top: 50%;
+  width: clamp(220px, 20vw, 420px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 50%;
+  background: linear-gradient(var(--sun-orange), var(--sun-pink));
+  box-shadow:
+  0 0 40px var(--sun-pink),
+  0 0 120px var(--sun-pink);
+  overflow: hidden;
+  mask-image: repeating-linear-gradient(
+  to bottom,
+  black 0px,
+  black 8px,
+  transparent 8px,
+  transparent 16px
 );
 }
 
@@ -85,7 +110,7 @@ display: flex;
 justify-content: center;
 position: relative;
 width: 100%;
-height: 50%;
+height: 60vh;
 transform-origin: top center;
 transform: perspective(700px) rotateX(70deg) translateY(60px);
 opacity: 0.8;
@@ -167,7 +192,7 @@ pointer-events: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 100px;
+  gap: clamp(30px, 6vw, 100px);
 }
 
 #img-self-portrait{
@@ -220,15 +245,14 @@ pointer-events: none;
 #right-aside::after {
   content: "";
   width: 2px;
-  height: 16vh;
+  height: 30vh;
+  box-shadow: 0 0 10px var(--aqua);
+  filter: blur(1px);
 }
 
-#right-aside::before {
-  background: linear-gradient(to bottom, transparent, var(--aqua));
-}
-
+#right-aside::before,
 #right-aside::after {
-  background: linear-gradient(to top, transparent, var(--aqua));
+  background: var(--aqua-trans);
 }
 
 footer{
@@ -240,14 +264,14 @@ footer{
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   z-index: 5;
-  padding: 0 100px 0 100px;
+  padding: 0 clamp(20px,5vw,100px);
 }
 
 .footer-center{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-center{
@@ -263,10 +287,20 @@ footer{
 }
 
 .social-media-img {
-  width: 100px;
+  width: clamp(50px,6vw,100px);
+  filter: drop-shadow(0 0 1rem var(--aqua));
+  transition: 0.5s ease-in-out;
+}
+
+.social-media-img:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 1rem var(--aqua));
 }
 
 .footer-buttons{
+  width: 120%;
+  height: 80px;
+  border-radius: 10px;
   z-index: 2;
   border: 2px solid var(--aqua);
 
@@ -279,121 +313,114 @@ footer{
   transition: 0.3s;
 }
 
+#CV-button-small{
+  display: none;
+}
+
+
 .footer-buttons:hover{
   background: var(--aqua-trans);
   box-shadow: 0 0 55px var(--aqua);
 }
 
-#CV-button{
-  width: 120%;
-  height: 80px;
-  border-radius: 10px;
+.social-media-footer{
+  display: none;
 }
 
-#music-toggle{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  font-size: 50px;
-}
-
-#music-menu {
-  position: absolute;
-  bottom: 0px;
-  right: 120%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-
-  border-radius: 10px;
-  box-shadow: 0 0 40px var(--aqua);
-  border: solid 2px var(--aqua);
-}
-
-.hidden-menu {
-  visibility: hidden;
-  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
-}
-
-.song {
-  background: transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 40px var(--aqua);
-  border: solid 2px var(--aqua);
-  padding: 10px;
-  margin-bottom: 10px;
-  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
-  color: white;
-  font-size: 20px;
-}
-
-.song:hover {
-  background: var(--aqua-trans);
-  box-shadow: 0 0 55px var(--aqua);
-}
-
-@media (max-width: 768px) {
-
+@media (max-width: 1024) {
   #mid-section{
+    position: relative;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
+    padding: 120px 20px 120px 20px;
   }
 
-  .ground{
-    transform: perspective(500px) rotateX(65deg) translateY(40px);
-  }
+#right-aside{
+  display: none;
+}
 
-  .sun{
-    width: 40%;
-    height: 60%;
-  }
+.social-media-footer{
+  display: flex;
+}
 
-  #hero{
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
+.ground{
+  transform: perspective(500px) rotateX(65deg) translateY(40px);
+}
 
-  #img-self-portrait{
-    max-width: 160px;
-  }
+.sky{
+  height: 45%;
+}
 
-  #education{
-    font-size: 36px;
-  }
+.sun{
+  width: clamp(180px, 55vw, 300px);
+  aspect-ratio: 1 / 1;
+  top: 10%;     
 
-  #right-aside{
-    flex-direction: row;
-    gap: 20px;
-  }
+}
 
-  .social-media-img{
-    width: 60px;
-  }
+#hero{
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
 
-  footer{
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-  }
+#img-self-portrait{
+  max-width: 160px;
+}
 
-  #footer-left,
-  #footer-right{
-    justify-self: center;
-  }
+#education{
+  font-size: 36px;
+}
 
-  #CV-button{
-    width: auto;
-    height: 60px;
-    font-size: 18px;
-  }
+#right-aside{
+  flex-direction: row;
+  gap: 20px;
+}
 
-  #music-toggle{
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
-  }
+.social-media-img{
+  width: 60px;
+}
 
+footer{
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+#right-aside{
+  flex-direction: row;
+  gap: 20px;
+}
+
+#footer-left,
+#footer-right{
+  justify-self: center;
+}
+
+.footer-buttons{
+  z-index: 2;
+  border: 2px solid var(--aqua);
+
+  background: transparent;
+  color: var(--aqua);
+  font-size: 3vw;
+
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--aqua);
+  transition: 0.3s;
+}
+
+#CV-button-small{
+display: block;
+}
+
+#CV-button-big{
+display: none;
+}
 }

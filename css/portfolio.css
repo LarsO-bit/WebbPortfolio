@@ -4,12 +4,10 @@ body{
   flex-direction: column;
 }
 
-@media (max-width: 900px){
-  body{
-    overflow: auto;
-  }
-}
 
+h1{
+  display: none;
+}
 #port{
   flex: 1;
 
@@ -26,16 +24,6 @@ body{
   gap: 5%;
   max-width: 1400px;
   width: 90%;
-}
-
-#port h1{
-    text-align: center;
-    color: var(--sun-pink);
-    margin-bottom: 20px;
-
-    text-shadow:
-    0 0 10px var(--sun-pink),
-    0 0 30px var(--sun-pink);
 }
 
 .port-card {
@@ -178,4 +166,29 @@ body{
     text-shadow:
         0 0 10px var(--sun-pink),
         0 0 25px var(--sun-pink);
+}
+
+@media (max-width: 900px){
+body{
+  overflow: auto;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 8vw;
+  padding: 100px 0;
+  display: flex;
+  text-align: center;
+  color: var(--sun-pink);
+  margin-bottom: 20px;
+
+  text-shadow:
+    0 0 10px var(--sun-pink),
+    0 0 30px var(--sun-pink);
+}
+
 }

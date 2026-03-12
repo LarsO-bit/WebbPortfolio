@@ -6,39 +6,16 @@
   --aqua-dark: rgb(2, 85, 67);
   --shadow-pink-trans: rgb(255, 47, 146, 0.6);
   --sky-mid: rgb(18, 0, 43);
-
-  --chrome-trans: linear-gradient(
-  to bottom,
-  rgb(245, 245, 245, 0.7) 0%,
-  rgb(207, 207, 207, 0.7) 20%,
-  rgb(255, 255, 255, 0.7) 40%,
-  rgb(153, 153, 153, 0.7) 60%,
-  rgb(234, 234, 234, 0.7) 80%,
-  rgb(122, 122, 122, 0.7) 100%
-);
- --chrome: linear-gradient(
-  to bottom,
-  rgb(245, 245, 245) 0%,
-  rgb(207, 207, 207) 20%,
-  rgb(255, 255, 255) 40%,
-  rgb(153, 153, 153) 60%,
-  rgb(234, 234, 234) 80%,
-  rgb(122, 122, 122) 100%
-);
 }
 
 @font-face {
   font-family:"SyntFont";
   src: url("/Fonts/BungeeShade-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family:"SyntFontType2";
   src: url("/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
-  font-weight:bolder ;
-  font-style: normal;
 }
 
 *{
@@ -49,21 +26,53 @@ caption{
   color: var(--aqua);
 }
 
-#top-bar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 100px;
-    z-index: 1000;
+#menu-toggle{
+  display: none;
+  font-size: 40px;
+  color: var(--aqua);
+  cursor: pointer;
 }
 
-.a-topbar.active {
+#top-bar{
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px;
+  z-index: 1000;
+}
+
+.logo{
+  color: var(--pink);
+  font-size: 4vw;
+  text-decoration: none;
+  text-shadow:0 0 20px var(--pink);
+}
+
+#right-top{
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+}
+
+.a-topbar{
+  display: inline-block;
+  color: var(--aqua);
+  font-size: 1.3vw;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.a-topbar:hover{
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink);
+  transform: scale(1.4);
+}
+
+.a-topbar.active{
 
   color: var(--pink);
 
@@ -75,28 +84,43 @@ caption{
   transform: scale(1.4);
 }
 
-.logo {
-  color:var(--pink);
-  background-clip: text;
-  -webkit-background-clip: text;
+@media (max-width: 768px){
 
-  font-size: 60px;
-  text-decoration: none;
-  text-shadow:0 0 20px var(--pink);
+#top-bar{
+  height: 80px;
+  padding: 0 20px;
 }
 
-.a-topbar {
-  display: inline-block;
-  color: aqua;
-  font-size: 20px;
-  letter-spacing: 2px;
-  transition: 0.3s;
-  margin-left: 60px;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+.logo{
+  font-size: 28px;
 }
 
-.a-topbar:hover {
-  color: var(--pink);
-  text-shadow: 0 0 8px var(--pink);
-  transform: scale(1.4);
+#menu-toggle{
+  display: block;
+}
+
+#right-top{
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  background: rgba(10,0,30,0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
+
+}
+
+.a-topbar{
+  font-size: 2.4vw;
+}
+
+#right-top.active{
+  transform: translateY(0);
+}
+
 }
