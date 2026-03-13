@@ -59,7 +59,6 @@ caption{
   color: var(--aqua);
 }
 
-
 .scene {
   position: fixed;       
   top: 0;               
@@ -74,35 +73,35 @@ caption{
   pointer-events: none;
 }
 
+.sky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: hidden; 
+}
+
 .sun {
-  position: relative;
-  top: 50%;
-  width: clamp(220px, 20vw, 420px);
+  width: clamp(200px, 18vw, 420px);
   aspect-ratio: 1 / 1;
-  height: auto;
   border-radius: 50%;
   background: linear-gradient(var(--sun-orange), var(--sun-pink));
   box-shadow:
   0 0 40px var(--sun-pink),
   0 0 120px var(--sun-pink);
-  overflow: hidden;
+  
   mask-image: repeating-linear-gradient(
-  to bottom,
-  black 0px,
-  black 8px,
-  transparent 8px,
-  transparent 16px
-);
-}
-
-.sky {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50%; 
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+    to bottom,
+    black 0px,
+    black 8px,
+    transparent 8px,
+    transparent 16px
+  );
 }
 
 .ground {
@@ -112,7 +111,7 @@ position: relative;
 width: 100%;
 height: 60vh;
 transform-origin: top center;
-transform: perspective(700px) rotateX(70deg) translateY(60px);
+transform: perspective(700px) rotateX(70deg);
 opacity: 0.8;
 
 background:
@@ -197,6 +196,8 @@ pointer-events: none;
 
 #img-self-portrait{
   max-width: 220px;
+  width: 20vw;
+  min-width: 120px;
   border-radius: 20px;
   box-shadow: 0 0 40px var(--pink);
   border: double 2px var(--pink);
@@ -327,7 +328,7 @@ footer{
   display: none;
 }
 
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
   #mid-section{
     position: relative;
     min-height: 100vh;
@@ -372,11 +373,6 @@ footer{
 
 #education{
   font-size: 36px;
-}
-
-#right-aside{
-  flex-direction: row;
-  gap: 20px;
 }
 
 .social-media-img{
