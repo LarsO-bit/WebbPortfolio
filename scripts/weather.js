@@ -16,7 +16,7 @@ async function getWeather() {
 
     const data = await response.json();
 
-   const temperature = data.main.temp;
+    const temperature = data.main.temp;
     const location = data.name;
     const icon = data.weather[0].icon;
 
