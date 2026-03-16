@@ -37,47 +37,75 @@ background:
     );
 }
 
+@font-face {
+  font-family:"SyntFont";
+  src: url("/Fonts/BungeeShade-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"SyntFontType2";
+  src: url("/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
+  font-weight:bolder ;
+  font-style: normal;
+}
+
+*{
+  font-family: "SyntFontType2", sans-serif; 
+}
+
+caption{
+  color: var(--aqua);
+}
+
 .scene {
-z-index: 0;
-position: absolute;
-width: 100%;
-height: 100%;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-overflow: hidden;
+  z-index: 0;
+  position: fixed;       
+  top: 0;               
+  left: 0;                  
+  width: 100%;
+  height: 100vh;                      
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .sun {
-position: relative;
-top: 50%;
-width: 20%;
-height: 75%;
-border-radius: 50%;
-background: linear-gradient(var(--sun-orange), var(--sun-pink));
-box-shadow:
-    0 0 40px var(--sun-pink),
-    0 0 120px var(--sun-pink);
-
-overflow: hidden;
-
-mask-image: repeating-linear-gradient(
-to bottom,
+  position: relative;
+  top: 10vh;
+  width: clamp(200px, 18vw, 420px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: linear-gradient(var(--sun-orange), var(--sun-pink));
+  overflow: hidden;
+  box-shadow:
+  0 0 40px var(--sun-pink),
+  0 0 120px var(--sun-pink);
+  
+  mask-image: repeating-linear-gradient(
+    to bottom,
     black 0px,
     black 8px,
     transparent 8px,
     transparent 16px
-);
+  );
 }
 
 .sky {
+  z-index: 1;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 50%; 
-  overflow: hidden;
+  height: 50vh;
+
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+
+  overflow: hidden; 
 }
 
 .ground {
@@ -85,9 +113,9 @@ display: flex;
 justify-content: center;
 position: relative;
 width: 100%;
-height: 50%;
+height: 50vh;
 transform-origin: top center;
-transform: perspective(700px) rotateX(70deg) translateY(60px);
+transform: perspective(700px) rotateX(70deg) translateY(80px);
 opacity: 0.8;
 
 background:
@@ -167,11 +195,13 @@ pointer-events: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 100px;
+  gap: clamp(30px, 6vw, 100px);
 }
 
 #img-self-portrait{
   max-width: 220px;
+  width: 20vw;
+  min-width: 120px;
   border-radius: 20px;
   box-shadow: 0 0 40px var(--pink);
   border: double 2px var(--pink);
@@ -182,7 +212,7 @@ pointer-events: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: clamp(32px, 6vw, 70px);
+  font-size: clamp(12px, 4vw, 70px);
   font-weight: 900;
   margin-bottom: 10px;
 
@@ -220,15 +250,14 @@ pointer-events: none;
 #right-aside::after {
   content: "";
   width: 2px;
-  height: 16vh;
+  height: 30vh;
+  box-shadow: 0 0 10px var(--aqua);
+  filter: blur(1px);
 }
 
-#right-aside::before {
-  background: linear-gradient(to bottom, transparent, var(--aqua));
-}
-
+#right-aside::before,
 #right-aside::after {
-  background: linear-gradient(to top, transparent, var(--aqua));
+  background: var(--aqua-trans);
 }
 
 footer{
@@ -240,14 +269,14 @@ footer{
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   z-index: 5;
-  padding: 0 100px 0 100px;
+  padding: 0 clamp(20px,5vw,100px);
 }
 
 .footer-center{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-center{
@@ -256,6 +285,7 @@ footer{
 
 #footer-left{
   justify-self: start;
+  margin-left: 55px;
 }
 
 #footer-right{
@@ -263,20 +293,64 @@ footer{
 }
 
 .social-media-img {
-  width: 100px;
+  width: clamp(50px,6vw,100px);
+  filter: drop-shadow(0 0 1rem var(--aqua));
+  transition: 0.5s ease-in-out;
+}
+
+.social-media-img:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 1rem var(--aqua));
 }
 
 .footer-buttons{
+  height: 80px;
+  border-radius: 10px;
+  padding: 0 clamp(20px, 2vw, 400px);
   z-index: 2;
   border: 2px solid var(--aqua);
-
   background: transparent;
   color: var(--aqua);
   font-size: 30px;
-
   cursor: pointer;
   box-shadow: 0 0 15px var(--aqua);
   transition: 0.3s;
+}
+
+.weather-widget{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 16px;
+  border-radius:12px;
+  backdrop-filter: blur(6px);
+  border:1px solid var(--aqua);
+  box-shadow:
+  0 0 10px var(--aqua),
+}
+
+#weather-icon{
+  width:50px;
+  height:50px;
+  filter: drop-shadow(0 0 8px var(--pink));
+}
+
+.weather-info{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+#weather-temp{
+  font-size:22px;
+  color:var(--aqua);
+  text-shadow:0 0 10px var(--aqua);
+}
+
+#weather-city{
+  font-size:14px;
+  color:var(--pink);
+  text-shadow:0 0 8px var(--pink);
 }
 
 .footer-buttons:hover{
@@ -284,116 +358,105 @@ footer{
   box-shadow: 0 0 55px var(--aqua);
 }
 
-#CV-button{
-  width: 120%;
-  height: 80px;
-  border-radius: 10px;
+.social-media-footer{
+  display: none;
 }
 
-#music-toggle{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  font-size: 50px;
+@media (max-width: 1024px) {
+#mid-section{
+  position: relative;
+  min-height: 100vh;
+
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 120px 20px 60px 20px;
 }
 
-#music-menu {
-  position: absolute;
-  bottom: 0px;
-  right: 120%;
-  padding: 10px;
+footer{
+  position: relative;
+  bottom: auto;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
-
-  border-radius: 10px;
-  box-shadow: 0 0 40px var(--aqua);
-  border: solid 2px var(--aqua);
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
 
-.hidden-menu {
-  visibility: hidden;
-  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
+#right-aside{
+  display: none;
 }
 
-.song {
+.social-media-footer{
+  display: flex;
+}
+
+.ground{
+  transform: perspective(500px) rotateX(65deg) translateY(40px);
+}
+
+.sky{
+  height: 45%;
+}
+
+.sun{
+  width: clamp(180px, 55vw, 300px);
+  aspect-ratio: 1 / 1;
+  top: 10%;     
+
+}
+
+#hero{
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+#img-self-portrait{
+  max-width: 160px;
+}
+
+#education{
+  font-size: 36px;
+}
+
+.social-media-img{
+  width: 60px;
+}
+
+#right-aside{
+  flex-direction: row;
+  gap: 20px;
+}
+
+#footer-left,
+#footer-center,
+#footer-right{
+  margin: 0;
+  display:flex;
+  justify-content:center;
+}
+
+.footer-buttons{
+  width: 100%;
+  justify-content: center;
+  z-index: 2;
+  border: 2px solid var(--aqua);
   background: transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 40px var(--aqua);
-  border: solid 2px var(--aqua);
-  padding: 10px;
-  margin-bottom: 10px;
-  transition: transform 2s ease, color 2s ease, text-shadow 2s ease;
-  color: white;
-  font-size: 20px;
+  color: var(--aqua);
+  font-size: calc(4px + 2vw);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--aqua);
+  transition: 0.3s;
 }
 
-.song:hover {
-  background: var(--aqua-trans);
-  box-shadow: 0 0 55px var(--aqua);
+#weather-data{
+  display:flex;
+  justify-content:center;
+  width:100%;
 }
-
-@media (max-width: 768px) {
-
-  #mid-section{
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-  }
-
-  .ground{
-    transform: perspective(500px) rotateX(65deg) translateY(40px);
-  }
-
-  .sun{
-    width: 40%;
-    height: 60%;
-  }
-
-  #hero{
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  #img-self-portrait{
-    max-width: 160px;
-  }
-
-  #education{
-    font-size: 36px;
-  }
-
-  #right-aside{
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .social-media-img{
-    width: 60px;
-  }
-
-  footer{
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-  }
-
-  #footer-left,
-  #footer-right{
-    justify-self: center;
-  }
-
-  #CV-button{
-    width: auto;
-    height: 60px;
-    font-size: 18px;
-  }
-
-  #music-toggle{
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
-  }
 
 }

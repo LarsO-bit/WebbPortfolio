@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    display: none;
+}
+
 .contact-container{
     height: 100vh;
     display: flex;
@@ -118,7 +127,20 @@ button:hover{
     margin-top: 10px;
 }
 
-@media(max-width:600px){
+@media(max-width:1024px){
+
+h1{
+  font-size: 8vw;
+  padding: 100px 0;
+  display: flex;
+  text-align: center;
+  color: var(--sun-pink);
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-shadow:
+    0 0 10px var(--sun-pink),
+    0 0 30px var(--sun-pink);
+}
 
 .contact{
     width:90%;

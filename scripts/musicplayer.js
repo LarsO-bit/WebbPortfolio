@@ -31,16 +31,30 @@ prev.addEventListener("click", function(){
     if (currentSongInd == 0){
         return;
     }
+
+    const wasPlaying = !audio.paused;
+
     currentSongInd--;
     updateSong();
+
+    if (wasPlaying) {
+        audio.play();
+    }
 });
 
 next.addEventListener("click", function(){
     if (currentSongInd == songs.length - 1){
         return;
     }
+
+    const wasPlaying = !audio.paused;
+
     currentSongInd++;
     updateSong();
+
+    if (wasPlaying) {
+        audio.play();
+    }
 });
 
 playAndPause.addEventListener("click", function(){

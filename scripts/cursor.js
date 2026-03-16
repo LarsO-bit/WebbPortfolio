@@ -1,8 +1,8 @@
 
 const coord = { x: 0, y: 0 };
-const circleCount = 300;
+const circleCount = 20;
 const circles = [];
-const circleDelay = 0.05;
+const circleDelay = 0.3;
 
 for (let i = 0; i < circleCount; i++) {
     const circle = document.createElement("div");
