@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="/css/topbar.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
     <div id="shooting-stars"></div>
     <div id="navbar-container"></div>
     <script src="/scripts/navbar.js"></script>
     <main class="about-layout">
-        <h1>About</h1>   
-        <section id="about-me">
+        <h1>About</h1>  
+        <section id="about-me"> 
             <aside id="left">
                 <div id="portrait">
                     <img src="/Images/portrait-pixelated.jpg" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
@@ -71,21 +72,28 @@
                     <div class="skill-card">
                         <h3>BACKEND</h3>
                         <ul>
-                            <li>.NET</li>
-                            <li>C#</li>
-                            <li>SQL</li>
-                            <li>APIs</li>
+                            <li>ASP.NET <i class="devicon-dotnetcore-plain"></i></li>
+                            <li>C# <i class="devicon-csharp-plain"></i></li>
+                            <li>SQL <i class="devicon-microsoftsqlserver-plain"></i></li>
+                            <li>APIs <i class="devicon-fastapi-plain"></i></li>
                         </ul>
                     </div>
-
                     <div class="skill-card">
+                        <h3>FRONTEND</h3>
+                        <ul>
+                            <li>HTML5 <i class="devicon-html5-plain"></i></li>
+                            <li>CSS <i class="devicon-css3-plain"></i></li>
+                            <li>JS <i class="devicon-javascript-plain"></i></li>
+                        </ul>
+                    </div>
+                    <!--<div class="skill-card">
                         <h3>CLOUD</h3>
                         <ul>
                             <li>Azure</li>
                             <li>Docker</li>
                             <li>CI/CD</li>
                         </ul>
-                    </div>
+                    </div>-->
 
                     <div class="skill-card">
                         <h3>ENGINEERING</h3>
@@ -107,26 +115,25 @@
                     <div class="reference-cards">
                         <div class="reference-card active">
                             <h3>Sina Sabzi</h3>
-                            <p>Country Manager – </p>
-                            <p>
+                            <p class="job-title">Country Manager - Paroc</p>
+                            <p class="qoute">
                                 Lars showed excellent technical coordination
-                                and problem-solving skills during several projects.
+                                and problem-solving skills.
                             </p>
                         </div>
                         <div class="reference-card">
                             <h3>Erik Johansson</h3>
-                            <p>Lead Technical team – Kingspan AB</p>
-                            <p>
+                            <p class="job-title">Lead Technical team - Kingspan</p>
+                            <p class="qoute">
                                 Lars quickly adapted to digital workflows
                                 and demonstrated strong analytical thinking.
                             </p>
                         </div>
                         <div class="reference-card">
-                            <h3>Maria Lind</h3>
-                            <p>Team Lead – Cloud Systems</p>
-                            <p>
-                                Highly motivated developer with strong curiosity
-                                for cloud technologies.
+                            <h3>Kimmo Rantala</h3>
+                            <p class="job-title">Managing Director - Kingspan</p>
+                            <p class="qoute">
+                                Highly motivated worker with strong positive attitude.
                             </p>
                         </div>
                     </div>
@@ -136,17 +143,6 @@
                 </div>
             </div>
         </section>
-        <!--<section class="hobbies panel">
-            <h2>Hobbies</h2>
-            <div class="hobby-grid">
-                <div class="hobby">Synthwave</div>
-                <div class="hobby">Tennis</div>
-                <div class="hobby">Cycling</div>
-                <div class="hobby">Skiing</div>
-                <div class="hobby">Climbing</div>
-                <div class="hobby">Sci-Fi & Fantasy</div>
-            </div>
-        </section>-->
     </main>
     <script src="/scripts/referenceslider.js"></script>
     <script src="/scripts/musicplayer.js"></script>

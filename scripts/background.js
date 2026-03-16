@@ -6,4 +6,4 @@ function animateGround() {
     requestAnimationFrame(animateGround);
 }
 
-//animateGround();
+animateGround();

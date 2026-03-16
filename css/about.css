@@ -1,5 +1,6 @@
 h1{
-    color: var(--sun-pink);
+    display: none;
+    text-decoration: underline;
 }
 
 h2{
@@ -24,12 +25,16 @@ h2::before{
     background: linear-gradient(to right, transparent, var(--aqua));
 }
 
+h3{
+    color: var(--pink);
+    text-decoration: underline;
+}
+
 .intro p{
     color: var(--aqua);
     line-height: 1.6;
     margin-bottom: 10px;
 }
-
 
 .about-layout{
     max-width: 90%;
@@ -214,8 +219,34 @@ h2::before{
 .skill-card li{
     margin-bottom: 6px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition:0.25s ease-in-out;
 }
 
+.skill-card li:hover{
+    transform: scale(1.01);
+    color: var(--sun-pink);
+    text-shadow:
+        0 0 10px var(--sun-pink),
+        0 0 25px var(--sun-pink);
+}
+
+.skill-card li i{
+    font-size: 1.2rem;
+    color: var(--aqua);
+}
+
+.job-title{
+    font-style: bold;
+    color: var(--aqua-light);
+    margin-bottom: 10px;
+}
+
+.qoute{
+    font-style: italic;
+}
 
 .reference-slider{
     display:flex;
@@ -265,26 +296,52 @@ h2::before{
     box-shadow: 0 0 50px var(--aqua);
 }
 
-@media (max-width: 900px){
+@media (max-width: 1024px){
 body{
-  overflow: auto;
+    overflow: auto;
 }
 
 main{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
-  font-size: 8vw;
-  padding: 100px 0;
-  display: flex;
-  text-align: center;
-  color: var(--sun-pink);
-  margin-bottom: 20px;
-
-  text-shadow:
-    0 0 10px var(--sun-pink),
-    0 0 30px var(--sun-pink);
+    font-size: 8vw;
+    padding: 100px 0;
+    display: flex;
+    text-align: center;
+    color: var(--sun-pink);
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-shadow:
+        0 0 10px var(--sun-pink),
+        0 0 30px var(--sun-pink);
 }
+
+#skill-grid {
+    grid-template-columns: 1fr;
+}
+
+}
+
+    
+
+
+@media (max-width: 1224px){
+    #about-me,
+    .skill-ref {
+        grid-template-columns: 1fr;
+    }
+
+    #portrait {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-layout {
+        padding: 0;
+    }
 }

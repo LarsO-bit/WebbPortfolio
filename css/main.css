@@ -60,12 +60,12 @@ caption{
 }
 
 .scene {
+  z-index: 0;
   position: fixed;       
   top: 0;               
   left: 0;                  
   width: 100%;
-  height: 100vh;            
-  z-index: -1;              
+  height: 100vh;                      
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -73,24 +73,14 @@ caption{
   pointer-events: none;
 }
 
-.sky {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-
-  overflow: hidden; 
-}
-
 .sun {
+  position: relative;
+  top: 10vh;
   width: clamp(200px, 18vw, 420px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: linear-gradient(var(--sun-orange), var(--sun-pink));
+  overflow: hidden;
   box-shadow:
   0 0 40px var(--sun-pink),
   0 0 120px var(--sun-pink);
@@ -104,14 +94,28 @@ caption{
   );
 }
 
+.sky {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: hidden; 
+}
+
 .ground {
 display: flex;
 justify-content: center;
 position: relative;
 width: 100%;
-height: 60vh;
+height: 50vh;
 transform-origin: top center;
-transform: perspective(700px) rotateX(70deg);
+transform: perspective(700px) rotateX(70deg) translateY(80px);
 opacity: 0.8;
 
 background:
@@ -208,7 +212,7 @@ pointer-events: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: clamp(32px, 6vw, 70px);
+  font-size: clamp(12px, 4vw, 70px);
   font-weight: 900;
   margin-bottom: 10px;
 
@@ -281,6 +285,7 @@ footer{
 
 #footer-left{
   justify-self: start;
+  margin-left: 55px;
 }
 
 #footer-right{
@@ -299,25 +304,54 @@ footer{
 }
 
 .footer-buttons{
-  width: 120%;
   height: 80px;
   border-radius: 10px;
+  padding: 0 clamp(20px, 2vw, 400px);
   z-index: 2;
   border: 2px solid var(--aqua);
-
   background: transparent;
   color: var(--aqua);
   font-size: 30px;
-
   cursor: pointer;
   box-shadow: 0 0 15px var(--aqua);
   transition: 0.3s;
 }
 
-#CV-button-small{
-  display: none;
+.weather-widget{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 16px;
+  border-radius:12px;
+  backdrop-filter: blur(6px);
+  border:1px solid var(--aqua);
+  box-shadow:
+  0 0 10px var(--aqua),
 }
 
+#weather-icon{
+  width:50px;
+  height:50px;
+  filter: drop-shadow(0 0 8px var(--pink));
+}
+
+.weather-info{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+#weather-temp{
+  font-size:22px;
+  color:var(--aqua);
+  text-shadow:0 0 10px var(--aqua);
+}
+
+#weather-city{
+  font-size:14px;
+  color:var(--pink);
+  text-shadow:0 0 8px var(--pink);
+}
 
 .footer-buttons:hover{
   background: var(--aqua-trans);
@@ -329,14 +363,27 @@ footer{
 }
 
 @media (max-width: 1024px) {
-  #mid-section{
-    position: relative;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-    padding: 120px 20px 120px 20px;
-  }
+#mid-section{
+  position: relative;
+  min-height: 100vh;
+
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 120px 20px 60px 20px;
+}
+
+footer{
+  position: relative;
+  bottom: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
 
 #right-aside{
   display: none;
@@ -365,6 +412,7 @@ footer{
   flex-direction: column;
   gap: 30px;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 #img-self-portrait{
@@ -379,44 +427,36 @@ footer{
   width: 60px;
 }
 
-footer{
-  position: fixed;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  width: 100%;
-}
-
 #right-aside{
   flex-direction: row;
   gap: 20px;
 }
 
 #footer-left,
+#footer-center,
 #footer-right{
-  justify-self: center;
+  margin: 0;
+  display:flex;
+  justify-content:center;
 }
 
 .footer-buttons{
+  width: 100%;
+  justify-content: center;
   z-index: 2;
   border: 2px solid var(--aqua);
-
   background: transparent;
   color: var(--aqua);
-  font-size: 3vw;
-
+  font-size: calc(4px + 2vw);
   cursor: pointer;
   box-shadow: 0 0 15px var(--aqua);
   transition: 0.3s;
 }
 
-#CV-button-small{
-display: block;
+#weather-data{
+  display:flex;
+  justify-content:center;
+  width:100%;
 }
 
-#CV-button-big{
-display: none;
-}
 }
