@@ -199,7 +199,7 @@ pointer-events: none;
 }
 
 #img-self-portrait{
-  max-width: 220px;
+  max-width: 260px;
   width: 20vw;
   min-width: 120px;
   border-radius: 20px;
@@ -243,21 +243,6 @@ pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-#right-aside::before,
-#right-aside::after {
-  content: "";
-  width: 2px;
-  height: 25vh;
-  box-shadow: 0 0 10px var(--aqua);
-  filter: blur(1px);
-}
-
-#right-aside::before,
-#right-aside::after {
-  background: var(--aqua-trans);
 }
 
 footer{
@@ -304,14 +289,14 @@ footer{
 }
 
 .footer-buttons{
-  height: 80px;
+  height: 80px; 
   border-radius: 10px;
-  padding: 0 clamp(20px, 2vw, 400px);
+  padding: 0 clamp(10px, 1vw, 20px);
   z-index: 2;
   border: 2px solid var(--aqua);
   background: transparent;
   color: var(--aqua);
-  font-size: 30px;
+  font-size: 24px;
   cursor: pointer;
   box-shadow: 0 0 15px var(--aqua);
   transition: 0.3s;
@@ -359,7 +344,11 @@ footer{
 }
 
 .social-media-footer{
-  display: none;
+  display: flex;
+}
+
+.social-media-img{
+  width: 100px;
 }
 
 @media (max-width: 1024px) {
@@ -421,10 +410,6 @@ footer{
 
 #education{
   font-size: 36px;
-}
-
-.social-media-img{
-  width: 60px;
 }
 
 #right-aside{
