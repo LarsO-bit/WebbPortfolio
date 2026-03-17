@@ -65,7 +65,7 @@ h1{
 .card-title {
     font-size: 1.5rem;
     letter-spacing: 3px;
-    text-decoration-line: underline;
+    align-self: center;
     color: var(--sun-pink);
     text-shadow:
     0 0 6px var(--sun-pink),
@@ -82,7 +82,7 @@ h1{
 
 .card-row a {
     color: var(--aqua);
-    text-decoration: none;
+    text-decoration: underline;
     text-shadow:
     0 0 6px var(--aqua),
     0 0 15px var(--aqua);
