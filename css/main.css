@@ -250,7 +250,7 @@ pointer-events: none;
 #right-aside::after {
   content: "";
   width: 2px;
-  height: 30vh;
+  height: 25vh;
   box-shadow: 0 0 10px var(--aqua);
   filter: blur(1px);
 }
