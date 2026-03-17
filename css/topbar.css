@@ -56,13 +56,13 @@ caption{
 #right-top{
   display: flex;
   align-items: center;
-  gap: 4vw;
+  gap: 4.5vw;
 }
 
 .a-topbar{
   display: inline-block;
   color: var(--aqua);
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
