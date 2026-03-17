@@ -35,7 +35,7 @@ function initMobileMenu(){
 
 function highlightActivePage() {
   const links = document.querySelectorAll(".a-topbar");
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const currentPage = window.location.pathname.split("/").pop();
 
   links.forEach(link => {
     const linkPage = link.getAttribute("href").split("/").pop();
