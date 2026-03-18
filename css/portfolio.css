@@ -150,4 +150,14 @@ h1{
   transform: scale(1.02);
   box-shadow: 0 0 50px var(--aqua);
 }
+
+.tech-icons{
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 5vw;
+    color: var(--aqua);
+}
+
 }

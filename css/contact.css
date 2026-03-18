@@ -213,6 +213,23 @@ h1{
     0 0 30px var(--sun-pink);
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.contact-img{
+    max-height: 250px;
+    object-fit: contain;
+    object-position:top;
+    border-radius: 12px;
+    border: 1px solid var(--aqua);
+    box-shadow: 0 0 20px var(--aqua-light);
+}
+
 .contact{
     width:90%;
     padding:30px;
