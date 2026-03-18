@@ -14,22 +14,38 @@
     <div class="background"></div>
     <main class="contact-container">
         <h1>Contact Me</h1>
-        <form method="POST" id="form" class="contact">
-            <div class="contact-left-title">
-                <h2>Get in touch</h2>
-                <hr>
+        <div class="wrapper">
+            <div class="contact-info">
+                <img src="/Images/ContactMe.jpg" alt="Portrait" class="contact-img">
+
+                <h2>Contact Info</h2>
+
+                <p><strong>Email:</strong> your@email.com</p>
+                <p><strong>Phone:</strong> +46 70 123 45 67</p>
+
+                <p class="contact-text">
+                    Feel free to reach out if you have any questions, 
+                    project ideas, or just want to connect.
+                </p>
             </div>
-            <input type="hidden" name="access_key" value="591feca6-6e33-47cf-bdab-e766f9f9cf0a">
-            <input type="hidden" name="subject" value="New Submission from Web3Forms">
-            <input type="checkbox" name="botcheck" id="" style="display: none;">
-            <!-- Custom Form Data -->
-            <input type="text" name="name" placeholder="Your Name" class="contacts-inputs" required>
-            <input type="email" name="email" placeholder="Your Email" class="contacts-inputs" required>
-            <textarea name="message" placeholder="Your Message" class="contacts-inputs" required></textarea>
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            <button type="submit">Send Message</button>
-            <div id="result"></div>
-        </form>
+
+            <form method="POST" id="form" class="contact">
+                <div class="contact-left-title">
+                    <h2>Get in touch</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key" value="591feca6-6e33-47cf-bdab-e766f9f9cf0a">
+                <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+                <!-- Custom Form Data -->
+                <input type="text" name="name" placeholder="Your Name" class="contacts-inputs" required>
+                <input type="email" name="email" placeholder="Your Email" class="contacts-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contacts-inputs" required></textarea>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <button type="submit">Send Message</button>
+                <div id="result"></div>
+            </form>
+        </div>
     </main>
     <script src="/scripts/navbar.js"></script>
     <script src="/scripts/validation.js"></script>

@@ -14,10 +14,81 @@ h1{
 }
 
 .contact-container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper{
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.contact-info{
+    width: 450px;
+    padding: 20px;
+    background: rgba(10,0,30,0.55);
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.35),
+        0 0 40px rgba(255,47,146,0.35),
+        inset 0 0 30px rgba(0,0,0,0.4);
+
+    position: relative;
+}
+
+.contact-info::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        var(--aqua),
+        var(--sun-pink)
+    );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.contact-img{
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    object-position:top;
+    border-radius: 12px;
+    border: 1px solid var(--aqua);
+    box-shadow: 0 0 20px var(--aqua-light);
+}
+
+.contact-info h2{
+    color: var(--sun-pink);
+    text-shadow: 0 0 10px var(--sun-pink);
+    text-align: center;
+}
+
+.contact-info p{
+    color: var(--aqua-light);
+    font-size: 0.95rem;
+}
+
+.contact-text{
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.5;
 }
 
 .contact{
@@ -29,7 +100,7 @@ h1{
     backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     box-shadow:
         0 0 20px rgba(0,255,255,0.35),
         0 0 40px rgba(255,47,146,0.35),
@@ -145,6 +216,15 @@ h1{
 .contact{
     width:90%;
     padding:30px;
+}
+.contact-wrapper{
+        flex-direction: column;
+        align-items: center;
+}
+
+.contact,
+.contact-info{
+    width: 90%;
 }
 }
 
