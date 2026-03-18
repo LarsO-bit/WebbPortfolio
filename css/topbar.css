@@ -34,7 +34,6 @@ caption{
 }
 
 #top-bar{
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -44,6 +43,15 @@ caption{
   align-items: center;
   padding: 0 150px;
   z-index: 1000;
+   background: rgba(10, 0, 40, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--aqua);
+
+  box-shadow:
+    0 0 20px var(--aqua),
+    inset 0 0 20px rgba(0, 255, 200, 0.1);
 }
 
 .logo{
