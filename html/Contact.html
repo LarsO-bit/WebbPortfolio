@@ -1,53 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Contact</title>
+
     <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/topbar.css">
     <link rel="stylesheet" href="/css/mouse.css">
-    <link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
-    <div id="navbar-container"></div>
-    <div class="background"></div>
-    <main class="contact-container">
-        <h1>Contact Me</h1>
-        <div class="wrapper">
-            <div class="contact-info">
-                <img src="/Images/ContactMe.jpg" alt="Portrait" class="contact-img">
-
-                <h2>Contact Info</h2>
-
-                <p><strong>Email:</strong> Lars.olsson.94@outlook.com</p>
-                <p><strong>Phone:</strong> +46 768 04 83 85</p>
-
-                <p class="contact-text">
-                    Feel free to reach out if you have any questions, 
-                    project ideas, or just want to connect.
-                </p>
-            </div>
-
-            <form method="POST" id="form" class="contact">
-                <div class="contact-left-title">
-                    <h2>Get in touch</h2>
-                    <hr>
-                </div>
-                <input type="hidden" name="access_key" value="591feca6-6e33-47cf-bdab-e766f9f9cf0a">
-                <input type="hidden" name="subject" value="New Submission from Web3Forms">
-                <input type="checkbox" name="botcheck" id="" style="display: none;">
-                <!-- Custom Form Data -->
-                <input type="text" name="name" placeholder="Your Name" class="contacts-inputs" required>
-                <input type="email" name="email" placeholder="Your Email" class="contacts-inputs" required>
-                <textarea name="message" placeholder="Your Message" class="contacts-inputs" required></textarea>
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                <button type="submit">Send Message</button>
-                <div id="result"></div>
-            </form>
+<div id="navbar-container"></div>
+<div class="background"></div>
+<main class="contact-container">
+    <h1 class="eng" id="media-eng-h1">Contact Me</h1>
+    <h1 class="sv" id="media-sv-h1">Kontakta Mig</h1>
+    <div class="wrapper">
+        <div class="contact-info">
+            <img src="/Images/ContactMe.jpg" alt="Portrait" class="contact-img">
+            <h2 class="eng">Contact Info</h2>
+            <h2 class="sv">Kontaktinformation</h2>
+            <p><strong>Email:</strong> Lars.olsson.94@outlook.com</p>
+            <p><strong class="eng">Phone:</strong><strong class="sv">Telefon:</strong> +46 768 04 83 85</p>
+            <p class="contact-text eng">
+                Feel free to reach out if you have any questions,
+                project ideas, or just want to connect.
+            </p>
+            <p class="contact-text sv">
+                Hör gärna av dig om du har frågor,
+                projektidéer eller bara vill ta kontakt.
+            </p>
         </div>
-    </main>
-    <script src="/scripts/navbar.js"></script>
-    <script src="/scripts/validation.js"></script>
+        <form method="POST" id="form" class="contact">
+            <div class="contact-left-title">
+                <h2 class="eng">Get in touch</h2>
+                <h2 class="sv">Skicka ett meddelande</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="591feca6-6e33-47cf-bdab-e766f9f9cf0a">
+            <input type="hidden" name="subject" value="New Submission from Web3Forms">
+
+            <input type="checkbox" name="botcheck" style="display:none;">
+            
+            <input class="contacts-inputs eng"
+                   type="text"
+                   name="name"
+                   placeholder="Your Name"
+                   required>
+            
+            <input class="contacts-inputs sv"
+                   type="text"
+                   name="name"
+                   placeholder="Ditt Namn"
+                   required>
+            
+            <input class="contacts-inputs eng"
+                   type="email"
+                   name="email"
+                   placeholder="Your Email"
+                   required>
+
+            <input class="contacts-inputs sv"
+                   type="email"
+                   name="email"
+                   placeholder="Din Email"
+                   required>
+            
+            <textarea class="contacts-inputs eng"
+                      name="message"
+                      placeholder="Your Message"
+                      required></textarea>
+
+            <textarea class="contacts-inputs sv"
+                      name="message"
+                      placeholder="Ditt Meddelande"
+                      required></textarea>
+
+
+            <button type="submit">
+                <span class="eng">Send Message</span>
+                <span class="sv">Skicka Meddelande</span>
+            </button>
+
+            <div id="result"></div>
+        </form>
+    </div>
+</main>
+
+<script src="/scripts/navbar.js"></script>
+<script src="/scripts/validation.js"></script>
+
 </body>
 </html>
+

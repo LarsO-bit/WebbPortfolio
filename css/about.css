@@ -1,8 +1,3 @@
-h1{
-    display: none;
-    text-decoration: underline;
-}
-
 h2{
     color: var(--pink);
     margin-bottom: 20px;
@@ -21,6 +16,7 @@ h2::before{
 h2::after{
     background: linear-gradient(to left, transparent, var(--aqua));
 }
+
 h2::before{
     background: linear-gradient(to right, transparent, var(--aqua));
 }
@@ -44,18 +40,18 @@ h3{
     padding-right: 40px;
 }
 
-#about-me{
+#about-me {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    gap: 40px;
-    align-items: start;
-
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 40px;
 }
 
-#profile,
-#left{
-    height: 90%;
-    display:flex;
+#left,
+#right {
+    display: flex;
+    flex-direction: column;
 }
 
 .panel{
@@ -71,15 +67,17 @@ h3{
 }
 
 .intro{
+    justify-content: flex-start;
     padding: 20px 50px;
 }
 
 #portrait,
-#container-music{
+#container-music {
     max-width: 250px;
-    width:100%;
+    width: 100%;
     margin: 0 auto;
-    height:auto;
+    height: 100%;
+    max-height: unset;
     backdrop-filter: blur(12px);
     border: 1px solid var(--aqua);
     box-shadow: 0 0 20px var(--aqua-light);
@@ -88,16 +86,17 @@ h3{
     transition: 0.4s ease;
 }
 
+#img-self-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
 #portrait:hover,
 #container-music:hover{
     transform: scale(1.01);
     box-shadow: 0 0 50px var(--aqua);
-}
-
-#img-self-portrait{
-    width:100%;
-    height:100%;
-    object-fit:cover;
 }
 
 #container-music{
@@ -188,7 +187,6 @@ h3{
     margin-bottom:20px;
 }
 
-
 #skill-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -243,6 +241,7 @@ h3{
 
 .qoute{
     font-style: italic;
+    font-size: 13px;
 }
 
 .reference-slider{
@@ -293,6 +292,27 @@ h3{
     box-shadow: 0 0 50px var(--aqua);
 }
 
+.eng{
+display:none;
+}
+
+.sv{
+display:block;
+}
+
+body.eng-active .eng{
+display:block;
+}
+
+body.eng-active .sv{
+display:none;
+}
+
+#media-eng-h1,
+#media-sv-h1 {
+    display: none;
+}
+
 @media (max-width: 1024px){
 body{
     overflow: auto;
@@ -318,27 +338,33 @@ h1{
         0 0 30px var(--sun-pink);
 }
 
+#media-sv-h1 {
+    display: flex;
+}
+
+body.eng-active #media-sv-h1 {
+    display: none;
+}
+
+body.eng-active #media-eng-h1 {
+    display: flex;
+}
+
 #skill-grid {
     grid-template-columns: 1fr;
 }
-
+#about-me,
+.skill-ref {
+    grid-template-columns: 1fr;
 }
 
-    
+#portrait {
+    max-width: 400px;
+    margin: 0 auto;
+}
 
+.about-layout {
+    padding: 0;
+}
 
-@media (max-width: 1224px){
-    #about-me,
-    .skill-ref {
-        grid-template-columns: 1fr;
-    }
-
-    #portrait {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .about-layout {
-        padding: 0;
-    }
 }

@@ -15,33 +15,55 @@
     <div id="navbar-container"></div>
     <script src="/scripts/navbar.js"></script>
     <main class="about-layout">
-        <h1>About</h1>  
+        <h1 class="eng" id="media-eng-h1">About Me</h1>  
+        <h1 class="sv" id="media-sv-h1">Om Mig</h1>  
         <section id="about-me"> 
             <aside id="left">
                 <div id="portrait">
-                    <img src="/Images/portrait-pixelated.jpg" id="img-self-portrait" alt="Self portatrit of author in synthwave theme">
+                    <img src="/Images/Sailing.jpg" id="img-self-portrait" alt="picture of me sailing in synthwave theme">
                 </div>
             </aside>
             <div class="intro panel container">
-                 <h2>About Me</h2>
-                <p>
-                   I’m a civil engineer transitioning into software and cloud development. 
-                   My time as a project engineer, coordinating complex projects and creating digital workflows, 
-                   sparked my interest in systems development and building efficient solutions.
+                <h2 class="eng">About Me</h2>
+                <h2 class="sv">Om mig</h2>
+
+                <p class="eng">
+                   I am a civil engineer in infrastructure and construction transitioning into software and cloud development. During my time as 
+                   a project engineer, I worked in an industry with a strong need for digital tools, which brought me into close contact with software 
+                   development and its possibilities. By coordinating complex projects and developing digital solutions, I developed a strong interest 
+                   in building efficient and scalable technical systems myself.
                 </p>
-                <p>
+                
+
+                <p class="sv">
+                    Jag är civilingenjör inom samhällsbyggnadsteknik som ställer om mot mjukvaru- och molnutveckling. Under min tid som projektingenjör 
+                    arbetade jag i en bransch med stort behov av digitala verktyg, vilket gjorde att jag kom i nära kontakt med systemutveckling och dess möjligheter.
+                    Genom att samordna komplexa projekt och utveckla digitala lösningar väcktes mitt intresse för att själv kunna bygga effektiva och skalbara tekniska system.
+                </p>
+                <p class="eng">
                     I’m now studying .NET development with a focus on cloud technologies, 
                     where I work with C#, ASP.NET and cloud‑native patterns to design applications 
                     that are both scalable and easy to maintain. 
                     I enjoy turning ideas into systems that feel intuitive, purposeful and impactful.
                 </p>
-                <p>
-                    Outside of tech, I produce synthwave music, and you can listen to some of my tracks in the player 
-                    to the right. I stay active through climbing, long-distance cycling, 
-                    sailing and tennis and always looking for a new next adventure to experience.
+                <p class="sv">
+                    Jag studerar nu .NET-utveckling med fokus på molnteknologier,
+                    där jag arbetar med C#, ASP.NET och cloud-baserade arkitekturmönster för att utveckla applikationer
+                    som är både skalbara och enkla att underhålla.
+                    Jag tycker om att omvandla idéer som kommer från verkliga behov till system som känns intuitiva och meningsfulla.
+                </p>
+                <p class="eng">
+                    Outside of tech, I have a creative streak and like to create synthwave music, and you can listen to some of my tracks in the musicplayer.
+                    In my freetime I enjoy to stay active through climbing, long-distance cycling, 
+                    sailing and tennis and I’m always looking for my next adventure.
+                </p>
+                <p class="sv">
+                    Utöver mina tekniska intressen har jag en kreativ ådra och ahr bland annat skapat  synthwave-musik. 
+                    Du kan lyssna på några av mina låtar i musikspelaren. Jag gillar att vara aktiv på min fritid genom klättring, långdistanscykling,
+                    segling och tennis, och jag letar alltid efter nästa äventyr.
                 </p>             
             </div>
-            <aside id="left">
+            <aside id="right">
                 <div id="container-music">
                     <div id="music-player">
                         <img src="/Images/placeholder.jpg" id="song-image" alt="Picture of album cover, a lone skier on a snowy mountain"/>
@@ -60,7 +82,8 @@
         </section>
         <section class="skill-ref">
             <div class="skill panel container">
-                <h2>Skills</h2>
+                <h2 class="eng">Skills</h2>
+                <h2 class="sv">Färdigheter</h2>
                 <div id="skill-grid">
                     <div class="skill-card">
                         <h3>BACKEND</h3>
@@ -81,48 +104,69 @@
                         </ul>
                     </div>
                     <div class="skill-card">
-                        <h3>CIVIL ENGINEERING</h3>
-                        <ul>
-                            <li>Project Management</li>
-                            <li>Technical Coordination</li>
-                            <li>Problem Solving</li>
-                            <li>Quality Control</li>
+                        <h3 class="eng">CIVIL ENGINEERING</h3>
+                        <h3 class="sv">CIVILINGENJÖR</h3>
+                        <ul class="eng">
+                            <li class="eng">Project Management</li>
+                            <li class="eng">Företagsekonomi</li>
+                            <li class="eng">Ledarskap</li>
+                            <li class="eng">Kvalitetsstyrning</li>
+                        </ul>
+                        <ul class="sv">
+                            <li class="sv">Projektledning</li>
+                            <li class="sv">Business Economics</li>
+                            <li class="sv">Leadership</li>
+                            <li class="sv">Quality Management</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="references panel container">
-                <h2>References</h2>
+                <h2 class="eng">References</h2>
+                <h2 class="sv">Referenser</h2>
                 <div class="reference-slider">
                     <button class="ref-arrow left">
                         <i class="fa-solid fa-chevron-left" aria-label="Button that jumps to previous qoute"></i>
                     </button>
                     <div class="reference-cards">
                         <div class="reference-card active">
-                            <h3>Sina Sabzi</h3>
-                            <p class="job-title">Country Manager - Paroc</p>
-                            <p class="qoute">
-                                Lars showed excellent technical coordination
-                                and problem-solving skills.
-                            </p>
+                                <h3>Sina Sabzi</h3>
+                                <p class="job-title">Commercial Director BU Nordics</p>
+                                <p class="quote eng">
+                                    Lars demonstrated excellent technical coordination and problem-solving skills. 
+                                    He is always willing to help colleagues and contributes positively to the team environment.
+                                </p>
+                                <p class="quote sv">
+                                    Lars visade stark teknisk samordningsförmåga och god problemlösningsförmåga. 
+                                    Han är alltid villig att hjälpa sina kollegor och bidrar till en positiv teamkultur.
+                                </p>
+                            </div>
+                            <div class="reference-card">
+                                <h3>Linnea Bengtsson</h3>
+                                <p class="job-title">Lead Technical Team – Kingspan</p>
+                                <p class="quote sv">
+                                    Lars har en stark teknisk kompetens. Han är kreativ i att hitta nya lösningar och delar gärna med sig av best practices. 
+                                    Han är en positiv och mycket uppskattad kollega.
+                                </p>
+                                <p class="quote eng">
+                                    Lars has strong technical expertise. He is creative when developing new solutions and is always willing to share best practices. 
+                                    He is a positive and highly appreciated colleague.
+                                </p>
+                            </div>
+                            <div class="reference-card">
+                                <h3>Sara Lindh</h3>
+                                <p class="job-title">Student – Jensen .NET Development</p>
+                                <p class="quote sv">
+                                    Lars är otroligt smart och skarp, men också öppen, hjälpsam och full av värme och humor. 
+                                    Hans energi smittar verkligen av sig och gör det både enkelt och roligt att samarbeta med honom.
+                                </p>
+                                <p class="quote eng">
+                                    Lars is incredibly intelligent and sharp, but also open, supportive, and full of warmth and humor. 
+                                    His energy is contagious and makes collaboration both easy and enjoyable.
+                                </p>
+                            </div>
                         </div>
-                        <div class="reference-card">
-                            <h3>Erik Johansson</h3>
-                            <p class="job-title">Lead Technical team - Kingspan</p>
-                            <p class="qoute">
-                                Lars quickly adapted to digital workflows
-                                and demonstrated strong analytical thinking.
-                            </p>
-                        </div>
-                        <div class="reference-card">
-                            <h3>Kimmo Rantala</h3>
-                            <p class="job-title">Managing Director - Kingspan</p>
-                            <p class="qoute">
-                                Highly motivated worker with strong positive attitude.
-                            </p>
-                        </div>
-                    </div>
                     <button class="ref-arrow right" aria-label="Button that jumps to next qoute">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>

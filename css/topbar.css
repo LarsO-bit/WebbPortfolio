@@ -33,6 +33,7 @@ caption{
   cursor: pointer;
 }
 
+
 #top-bar{
   position: fixed;
   top: 0;
@@ -56,7 +57,7 @@ caption{
 
 .logo{
   color: var(--pink);
-  font-size: 4vw;
+  font-size: 3vw;
   text-decoration: none;
   text-shadow:0 0 20px var(--pink);
 }
@@ -70,7 +71,7 @@ caption{
 .a-topbar{
   display: inline-block;
   color: var(--aqua);
-  font-size: 1.2vw;
+  font-size: 1vw;
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -92,14 +93,45 @@ caption{
   transform: scale(1.4);
 }
 
-@media (max-width: 768px){
-.logo{
-  font-size: 28px;
+#lang-toggle{
+
+  background: transparent;
+  border: 2px solid var(--aqua);
+  color: var(--aqua);
+  padding: 6px 14px;
+  font-size: 0.9vw;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow:
+  0 0 10px var(--aqua),
+  inset 0 0 10px rgba(0,255,200,0.2);
 }
 
-.a-topbar{
-  font-size: 2.4vw;
+#lang-toggle:hover{
+
+  color: var(--pink);
+  border-color: var(--pink);
+  box-shadow:
+  0 0 15px var(--pink),
+  inset 0 0 10px rgba(255,47,146,0.3);
+  transform: scale(1.1);
 }
+
+.eng{
+  display:none;
+}
+
+.sv{
+  display:inline;
+}
+
+body.eng-active .eng{
+  display:inline;
+}
+
+body.eng-active .sv{
+  display:none;
 }
 
 @media (max-width: 1024px){
@@ -141,3 +173,4 @@ caption{
   transition: transform 0.4s ease;
 }
 }
+

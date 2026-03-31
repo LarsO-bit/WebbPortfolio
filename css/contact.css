@@ -9,10 +9,6 @@ main{
     flex-direction: column;
 }
 
-h1{
-    display: none;
-}
-
 .contact-container{
     min-height: 100vh;
     display: flex;
@@ -24,24 +20,6 @@ h1{
     display: flex;
     gap: 40px;
     align-items: stretch;
-}
-
-.contact-info{
-    width: 450px;
-    padding: 20px;
-    background: rgba(10,0,30,0.55);
-    border-radius: 18px;
-    backdrop-filter: blur(15px);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    box-shadow:
-        0 0 20px rgba(0,255,255,0.35),
-        0 0 40px rgba(255,47,146,0.35),
-        inset 0 0 30px rgba(0,0,0,0.4);
-
-    position: relative;
 }
 
 .contact-info::before{
@@ -91,20 +69,31 @@ h1{
     line-height: 1.5;
 }
 
-.contact{
-    position: relative;
-    width: 450px;
+.contact-info,
+.contact {
     padding: 20px;
     background: rgba(10,0,30,0.55);
     border-radius: 18px;
     backdrop-filter: blur(15px);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
     box-shadow:
         0 0 20px rgba(0,255,255,0.35),
         0 0 40px rgba(255,47,146,0.35),
         inset 0 0 30px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+.contact-info {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .contact::before{
@@ -198,6 +187,11 @@ button:hover{
     margin-top: 10px;
 }
 
+#media-eng-h1,
+#media-sv-h1 {
+    display: none;
+}
+
 @media(max-width:1024px){
 
 h1{
@@ -211,6 +205,18 @@ h1{
   text-shadow:
     0 0 10px var(--sun-pink),
     0 0 30px var(--sun-pink);
+}
+
+#media-sv-h1 {
+    display: flex;
+}
+
+body.eng-active #media-sv-h1 {
+    display: none;
+}
+
+body.eng-active #media-eng-h1 {
+    display: flex;
 }
 
 .wrapper{

@@ -1,6 +1,6 @@
 
 const coord = { x: 0, y: 0 };
-const circleCount = 20;
+const circleCount = 100;
 const circles = [];
 const circleDelay = 0.3;
 

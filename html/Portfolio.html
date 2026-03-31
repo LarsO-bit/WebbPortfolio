@@ -13,24 +13,35 @@
 <body>
     <div id="navbar-container"></div>
     <main id="port">
-        <h1>Portfolio</h1>
+        <h1 class="eng" id="media-eng-h1">Portfolio</h1>
+        <h1 class="sv" id="media-sv-h1">Projekt</h1>
         <section class="port">
             <div class="port-card">
                 <img src="/Images/Adressbook.jpg" class="port-img" alt="Adressbok">
 
                 <div class="card-content">
-                    <h3 class="card-title">Adressbook</h3>
-
-                    <div class="card-row">
-                        <span class="label">Github:</span>
-                        <a href="https://github.com/LarsO-bit/Address-book" target="_blank">Länk till repo</a>
-                    </div>
-                    <p class="description">
-                        Command-line app for managing and storing contacts. 
+                    <h3 class="card-title">Addressbook</h3>
+                    <p class="description eng">
+                        Object-oriented C# console application for managing contacts with CRUD operations and search functionality. 
+                        Implemented file handling for data persistence. Focus on structure, user flow, and data management.
                     </p>
-                    <div class="tech-icons">
-                        <i class="devicon-csharp-plain"></i>
-                        <i class="devicon-github-original"></i>
+
+                    <p class="description sv">
+                        Objektorienterad konsolapplikation i C# för hantering av kontakter med stöd för CRUD och sökfunktionalitet. 
+                        Implementerade filhantering för att lagra och hämta data från textfil. Fokus på struktur, användarflöde och datalagring.
+                    </p>
+                    <div class="card-footer">
+                        <div class="card-row">
+                            <span class="label">Github:</span>
+                            <a href="https://github.com/LarsO-bit/Address-book" target="_blank">
+                                <span class="eng">Link to repo</span>
+                                <span class="sv">Länk till repo</span>
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <i class="devicon-csharp-plain"></i>
+                            <i class="devicon-github-original"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,35 +50,57 @@
 
                 <div class="card-content">
                     <h3 class="card-title">Shotgun</h3>
-
-                    <div class="card-row">
-                        <span class="label">Github:</span>
-                        <a href="https://github.com/LarsO-bit/Shotgun" target="_blank">Länk till repo</a>
-                    </div>
-
-                    <p class="description">
-                       Turn-based C# strategy game with ammo and win conditions.
+                    <p class="description eng">
+                        Developed an object-oriented C# game where the player faces a randomized AI opponent. 
+                        Implemented game logic, state handling, and resource rules. Focus on clean structure and logic.
                     </p>
-                    <div class="tech-icons">
-                        <i class="devicon-csharp-plain"></i>
+
+                    <p class="description sv">
+                        Utvecklade ett objektorienterat spel i C# där spelaren möter en dator med slumpmässiga val. 
+                        Implementerade spellogik, tillståndshantering och regler för resurser. Fokus på kodstruktur och logik.
+                    </p>
+                    <div class="card-footer">
+                        <div class="card-row">
+                            <span class="label">Github:</span>
+                            <a href="https://github.com/LarsO-bit/Shotgun" target="_blank">
+                                <span class="eng">Link to repo</span>
+                                <span class="sv">Länk till repo</span>
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <i class="devicon-csharp-plain"></i>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="port-card">
-                <img src="/Images/zooSAL.jpg" class="port-img" alt="ZooSAL">
+                <img src="/Images/ZOOSAL.jpg" class="port-img" alt="ZooSAL">
 
                 <div class="card-content">
                     <h3 class="card-title">ZooSAL</h3>
-                    <div class="card-row">
-                        <span class="label">Github:</span>
-                        <a href="https://github.com/LarsO-bit/Systementor-Zoo-TEMPLATE" target="_blank">Länk till repo</a>
-                    </div>
-                    <p class="description">
-                        Responsive website showcasing a fictional zoo made without JS.
+                    
+                    <p class="description eng">
+                        Built a responsive website using HTML and CSS. 
+                        Implemented form validation, tables, and integration with an external web service and Google Maps. 
+                        Focus on layout and user interaction.
                     </p>
-                    <div class="tech-icons">
-                        <i class="devicon-html5-plain"></i>
-                        <i class="devicon-css3-plain"></i>
+
+                    <p class="description sv">
+                        Byggde en responsiv webbsida med HTML och CSS. 
+                        Implementerade formulär med validering, tabeller samt integration mot extern webbtjänst och Google Maps. Fokus på layout och användarinteraktion.
+                    </p>
+                    <div class="card-footer">
+                        <div class="card-row">
+                            <span class="label">Github:</span>
+                            <a href="https://github.com/LarsO-bit/Systementor-Zoo-TEMPLATE" target="_blank">
+                                <span class="eng">Link to repo</span>
+                                <span class="sv">Länk till repo</span>
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <i class="devicon-html5-plain"></i>
+                            <i class="devicon-css3-plain"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,18 +109,28 @@
 
                 <div class="card-content">
                     <h3 class="card-title">WepAPI Blog</h3>
-                    <div class="card-row">
-                        <span class="label">Github:</span>
-                        <a href="https://github.com/LarsO-bit/WepAPI" target="_blank">Länk till repo</a>
-                    </div>
-
-                    <p class="description">
-                        ASP.NET Web API for creating and managing blog posts.
+                    <p class="description eng">
+                        Developed a REST API using ASP.NET and Entity Framework for managing users, posts, and categories. 
+                        Implemented authentication, CRUD operations, testing with Postman, and documentation with Swagger.
                     </p>
-                    <div class="tech-icons">
-                        <i class="devicon-csharp-plain"></i>
-                        <i class="devicon-fastapi-plain"></i>
-                        <i class="devicon-sqldeveloper-plain"></i>
+
+                    <p class="description sv">
+                        Utvecklade ett REST API med ASP.NET och Entity Framework för hantering av användare, inlägg och kategorier. 
+                        Implementerade autentisering, CRUD och testning via Postman samt dokumentation med Swagger.
+                    </p>
+                    <div class="card-footer">
+                        <div class="card-row">
+                            <span class="label">Github:</span>
+                            <a href="https://github.com/LarsO-bit/WepAPI" target="_blank">
+                                <span class="eng">Link to repo</span>
+                                <span class="sv">Länk till repo</span>
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <i class="devicon-csharp-plain"></i>
+                            <i class="devicon-fastapi-plain"></i>
+                            <i class="devicon-sqldeveloper-plain"></i>
+                        </div>
                     </div>
                 </div>
             </div>
