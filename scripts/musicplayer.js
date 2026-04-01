@@ -8,19 +8,10 @@ const prev = document.getElementById("backward");
 const next = document.getElementById("forward");
 
 const songs = [
-    {
-        name: "NR1",
-        audio: "/Sounds/NR1.mp3"
-    },
-    {
-        name: "NR2",
-        audio: "/Sounds/NR2.mp3"
-    },
-    {
-        name: "NR3",
-        audio: "/Sounds/NR3.mp3"
-    }
-];   
+    { name: "NR1", audio: "/WebbPortfolio/Sounds/NR1.mp3" },
+    { name: "NR2", audio: "/WebbPortfolio/Sounds/NR2.mp3" },
+    { name: "NR3", audio: "/WebbPortfolio/Sounds/NR3.mp3" },
+]; 
 
 const audio = document.createElement("audio")
 let currentSongInd = 0;
