@@ -55,14 +55,14 @@ background:none
 
 @font-face {
   font-family:"SyntFont";
-  src: url("/Fonts/BungeeShade-Regular.ttf") format("truetype");
+  src: url("Fonts/BungeeShade-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family:"SyntFontType2";
-  src: url("/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
+  src: url("Fonts/BrunoAceSC-Regular.ttf") format("truetype");
   font-weight:bolder ;
   font-style: normal;
 }

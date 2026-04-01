@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", loadNavbar);
 
 async function loadNavbar() {
-
   try {
-
-    const response = await fetch("html/NavBar.html");
-
+    const response = await fetch("/WebbPortfolio/html/NavBar.html");
     if (!response.ok) throw new Error("Navbar load failed");
 
     const data = await response.text();
-
     document.getElementById("navbar-container").innerHTML = data;
 
     highlightActivePage();
@@ -17,11 +13,8 @@ async function loadNavbar() {
     initLanguage();
 
   } catch (err) {
-
     console.error(err);
-
   }
-
 }
 
 
