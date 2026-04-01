@@ -28,9 +28,7 @@ function initMobileMenu(){
   if(!toggle) return;
 
   toggle.addEventListener("click", () => {
-
     menu.classList.toggle("active");
-
   });
 
 }
