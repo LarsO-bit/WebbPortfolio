@@ -4,7 +4,7 @@ async function loadNavbar() {
 
   try {
 
-    const response = await fetch("/html/NavBar.html");
+    const response = await fetch("html/NavBar.html");
 
     if (!response.ok) throw new Error("Navbar load failed");
 
