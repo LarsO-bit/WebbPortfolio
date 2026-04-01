@@ -1,12 +1,22 @@
 document.addEventListener("DOMContentLoaded", loadNavbar);
 
+const isGitHub = window.location.hostname.includes("github.io");
+const BASE = isGitHub ? "/WebbPortfolio" : "";
+
+document.addEventListener("DOMContentLoaded", loadNavbar);
+
 async function loadNavbar() {
   try {
-    const response = await fetch("/WebbPortfolio/html/NavBar.html");
+    const response = await fetch(`${BASE}/html/NavBar.html`);
     if (!response.ok) throw new Error("Navbar load failed");
 
     const data = await response.text();
     document.getElementById("navbar-container").innerHTML = data;
+
+    document.querySelectorAll(".a-topbar, .logo").forEach(link => {
+      const href = link.getAttribute("href");
+      link.setAttribute("href", BASE + "/" + href.replace(/^\//, ""));
+    });
 
     highlightActivePage();
     initMobileMenu();
