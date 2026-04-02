@@ -88,6 +88,14 @@ function applyLanguage(lang){
 
   localStorage.setItem("language", lang);
 
+  const isEng = lang === "eng";
+  const name = document.getElementById("input-name");
+  const email = document.getElementById("input-email");
+  const msg = document.getElementById("input-message");
+
+  if(name) name.placeholder = isEng ? "Your Name" : "Ditt Namn";
+  if(email) email.placeholder = isEng ? "Your Email" : "Din Email";
+  if(msg) msg.placeholder = isEng ? "Your Message" : "Ditt Meddelande";
 }
 
 
