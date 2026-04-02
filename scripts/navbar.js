@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", loadNavbar);
 
-const isGitHub = window.location.hostname.includes("github.io");
-const BASE = isGitHub ? "/WebbPortfolio" : "";
-
 document.addEventListener("DOMContentLoaded", loadNavbar);
 
 async function loadNavbar() {
