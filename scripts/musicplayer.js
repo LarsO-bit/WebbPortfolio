@@ -7,9 +7,6 @@ const playAndPause = document.getElementById("playpause");
 const prev = document.getElementById("backward");
 const next = document.getElementById("forward");
 
-const isGitHub = window.location.hostname.includes("github.io");
-const BASE = isGitHub ? "/WebbPortfolio" : "";
-
 const songs = [
     { name: "NR1", audio: `${BASE}/Sounds/NR1.mp3` },
     { name: "NR2", audio: `${BASE}/Sounds/NR2.mp3` },
