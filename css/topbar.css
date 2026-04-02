@@ -135,17 +135,30 @@ body.eng-active .sv{
 }
 
 @media (max-width: 1024px){
-  #menu-toggle{
-    display: block;
+#menu-toggle{
+  display: block;
+}
+
+#top-bar{
+  height: 80px;
+  padding: 0 20px;
+}
+
+#right-top.active{
+  transform: translateY(0);
+}
+
+.logo{
+    font-size: 6vw; 
+    white-space: nowrap;
   }
 
-  #top-bar{
-    height: 80px;
-    padding: 0 20px;
+   .a-topbar{
+    font-size: 18px;
   }
 
-  #right-top.active{
-    transform: translateY(0);
+ #lang-toggle{
+    font-size: 16px;
   }
 
   #right-top{
@@ -168,7 +181,6 @@ body.eng-active .sv{
   align-items: center;
   gap: 25px;
   padding: 40px 0;
-
   transform: translateY(-200%);
   transition: transform 0.4s ease;
 }

@@ -55,14 +55,14 @@ background:none
 
 @font-face {
   font-family: "SyntFont";
-  src: url("/WebbPortfolio/Fonts/BungeeShade-Regular.ttf") format("truetype");
+  src: url("../Fonts/BungeeShade-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SyntFontType2";
-  src: url("/WebbPortfolio/Fonts/BrunoAceSC-Regular.ttf") format("truetype");
+  src: url("../Fonts/BrunoAceSC-Regular.ttf") format("truetype");
   font-weight: bolder;
   font-style: normal;
 }
@@ -374,16 +374,21 @@ footer{
   min-height: auto;
 
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 40px;
 
-  padding: 120px 20px 0px 20px;
+  padding: 100px 20px 0px 20px;
 }
 
-footer{
+#img-self-portrait {
+  max-width: 45vh;
+  width: 20vh;
+}
+
+footer {
   position: relative;
   bottom: auto;
-  margin-top: 0px;
+  margin-top: -150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -397,6 +402,12 @@ footer{
 
 .social-media-footer{
   display: flex;
+}
+
+.scene {
+  position: fixed;
+  height: 100vh;
+  pointer-events: none;
 }
 
 .ground{
@@ -418,11 +429,7 @@ footer{
   flex-direction: column;
   gap: 30px;
   text-align: center;
-  margin-bottom: 80px;
-}
-
-#img-self-portrait{
-  max-width: 30vh;
+  margin-bottom: 0px;
 }
 
 #education{
